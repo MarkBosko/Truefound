@@ -1,0 +1,52 @@
+generator client {
+  provider = "prisma-client-js"
+
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Film {
+  id             String   @id @default(cuid())
+  title          String
+  slug           String   @unique
+  description    String
+  director       String
+  year           Int
+  genre          String
+  runtime        Int
+  vimeoTrailerId String
+  vimeoFilmId    String
+  posterUrl      String
+  rentalPrice    Int
+  purchasePrice  Int
+  active         Boolean  @default(true)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  orders Order[]
+
+  @@map("films")
+}
+
+model Order {
+  id                    String    @id @default(cuid())
+  filmId                String
+  type                  OrderType
+  amountCents           Int
+  stripePaymentIntentId String    @unique
+  customerEmail         String
+  accessToken           String    @unique @default(uuid())
+  expiresAt             DateTime?
+  createdAt             DateTime  @default(now())
+
+  film Film @relation(fields: [filmId], references: [id])
+
+  @@map("orders")
+}
+
+enum OrderType {
+  RENTAL
+  PURCHASE
+}

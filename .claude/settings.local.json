@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell($env:PATH = \"C:\\\\Program Files\\\\nodejs;\" + $env:PATH; Set-Location C:\\\\Users\\\\13306\\\\Desktop\\\\Truefound; & \"C:\\\\Program Files\\\\nodejs\\\\npm.cmd\" install @prisma/adapter-pg pg @types/pg 2>&1)",
+      "PowerShell(Get-ChildItem C:\\\\Users\\\\13306\\\\Desktop\\\\Truefound\\\\src -Recurse -File | Where-Object { $_.Extension -match \"\\\\.\\(ts|tsx|css\\)$\" } | Select-Object -ExpandProperty FullName | ForEach-Object { $_.Replace\\(\"C:\\\\Users\\\\13306\\\\Desktop\\\\Truefound\\\\\", \"\"\\) })"
+    ]
+  }
+}
