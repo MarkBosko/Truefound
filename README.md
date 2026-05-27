@@ -13,7 +13,7 @@ cd Truefound
 
 ## Contributing
 
-Pull requests are welcom. Please open an issue first to discuss what you'd like to change.
+Pull requests are welcome. Please open an issue first to discuss what you'd like to change.
 
 ## License
 
