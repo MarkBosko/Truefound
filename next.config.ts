@@ -6,6 +6,19 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "**" },
     ],
   },
+  async headers() {
+    return [
+      {
+        source: "/(.*)",
+        headers: [
+          {
+            key: "Content-Security-Policy",
+            value: "frame-src 'self' https://embed.vhx.tv https://www.vhx.tv;",
+          },
+        ],
+      },
+    ]
+  },
 }
 
 export default nextConfig

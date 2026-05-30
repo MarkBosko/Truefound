@@ -64,7 +64,7 @@ export default async function WatchPage({ params }: Props) {
         <div className="bg-black flex-1 flex items-center">
           <div className="w-full aspect-video">
             <iframe
-              src={`https://player.vimeo.com/video/${order.film.vimeoFilmId}?autoplay=1&title=0&byline=0&portrait=0&color=ffffff`}
+              src={`https://embed.vhx.tv/videos/${order.film.vimeoFilmId}?autoplay=1`}
               className="w-full h-full"
               allow="autoplay; fullscreen; picture-in-picture"
               allowFullScreen
