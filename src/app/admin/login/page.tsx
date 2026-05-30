@@ -1,11 +1,8 @@
 "use client"
 
 import { useState } from "react"
-import { signIn } from "next-auth/react"
-import { useRouter } from "next/navigation"
 
 export default function AdminLoginPage() {
-  const router = useRouter()
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [error, setError] = useState("")
@@ -16,16 +13,21 @@ export default function AdminLoginPage() {
     setLoading(true)
     setError("")
 
-    const result = await signIn("credentials", {
-      email,
-      password,
-      redirect: false,
-    })
+    try {
+      const res = await fetch("/api/admin/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      })
 
-    if (result?.ok) {
-      window.location.href = "/admin"
-    } else {
-      setError(result?.error ?? "Invalid email or password.")
+      if (res.ok) {
+        window.location.href = "/admin"
+      } else {
+        setError("Invalid email or password.")
+        setLoading(false)
+      }
+    } catch {
+      setError("Connection error. Please try again.")
       setLoading(false)
     }
   }

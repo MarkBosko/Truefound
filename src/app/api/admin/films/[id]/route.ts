@@ -1,17 +1,11 @@
 import { NextRequest, NextResponse } from "next/server"
-import { getServerSession } from "next-auth"
-import { authOptions } from "@/lib/auth"
+import { verifyAdminSession } from "@/lib/admin-auth"
 import { prisma } from "@/lib/db"
 
 type Params = { params: Promise<{ id: string }> }
 
-async function requireAdmin() {
-  const session = await getServerSession(authOptions)
-  return !!session
-}
-
 export async function PUT(req: NextRequest, { params }: Params) {
-  if (!(await requireAdmin()))
+  if (!(await verifyAdminSession()))
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
 
   const { id } = await params
@@ -22,7 +16,7 @@ export async function PUT(req: NextRequest, { params }: Params) {
 }
 
 export async function DELETE(_: NextRequest, { params }: Params) {
-  if (!(await requireAdmin()))
+  if (!(await verifyAdminSession()))
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
 
   const { id } = await params

@@ -1,22 +1,29 @@
 import { NextResponse } from "next/server"
 import type { NextRequest } from "next/server"
-import { getToken } from "next-auth/jwt"
+import { jwtVerify } from "jose"
+
+const secret = () => new TextEncoder().encode(process.env.NEXTAUTH_SECRET!)
+
+async function isValidToken(req: NextRequest): Promise<boolean> {
+  const token = req.cookies.get("admin-token")?.value
+  if (!token) return false
+  try {
+    await jwtVerify(token, await secret())
+    return true
+  } catch {
+    return false
+  }
+}
 
 export async function middleware(req: NextRequest) {
-  const token = await getToken({
-    req,
-    secret: process.env.NEXTAUTH_SECRET,
-  })
-
   const isLoginPage = req.nextUrl.pathname === "/admin/login"
+  const valid = await isValidToken(req)
 
-  if (!token && !isLoginPage) {
-    const loginUrl = new URL("/admin/login", req.url)
-    loginUrl.searchParams.set("callbackUrl", req.nextUrl.pathname)
-    return NextResponse.redirect(loginUrl)
+  if (!valid && !isLoginPage) {
+    return NextResponse.redirect(new URL("/admin/login", req.url))
   }
 
-  if (token && isLoginPage) {
+  if (valid && isLoginPage) {
     return NextResponse.redirect(new URL("/admin", req.url))
   }
 
