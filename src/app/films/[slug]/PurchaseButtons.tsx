@@ -32,7 +32,7 @@ export default function PurchaseButtons({ filmId, type, label }: Props) {
     <button
       onClick={handleCheckout}
       disabled={loading}
-      className="w-full bg-white text-black py-3 text-xs font-bold uppercase tracking-widest hover:bg-[#e0e0e0] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+      className="font-display w-full bg-white text-black py-3 text-xs font-bold uppercase tracking-widest hover:bg-[#e0e0e0] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
     >
       {loading ? "Loading…" : label}
     </button>

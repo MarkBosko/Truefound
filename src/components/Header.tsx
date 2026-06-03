@@ -18,7 +18,7 @@ export default function Header() {
         <nav className="flex items-center gap-8">
           <Link
             href="/films"
-            className="text-sm tracking-widest uppercase text-[#888] hover:text-white transition-colors"
+            className="font-display text-sm tracking-widest uppercase text-[#888] hover:text-white transition-colors"
           >
             Films
           </Link>

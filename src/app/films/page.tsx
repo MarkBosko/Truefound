@@ -21,7 +21,7 @@ export default async function FilmsPage() {
       <Header />
       <main className="flex-1 max-w-6xl mx-auto px-6 py-16">
         <div className="mb-12">
-          <p className="text-xs uppercase tracking-[0.3em] text-[#555] mb-2">
+          <p className="font-display text-xs uppercase tracking-[0.3em] text-[#555] mb-2">
             True Found
           </p>
           <h1 className="text-3xl font-black uppercase tracking-tight">

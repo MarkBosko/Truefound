@@ -65,10 +65,10 @@ export default async function FilmPage({ params }: Props) {
             <div className="space-y-4">
               <div className="border border-[#2a2a2a] rounded p-4">
                 <div className="flex items-center justify-between mb-1">
-                  <span className="text-sm font-bold uppercase tracking-wider">
+                  <span className="font-display text-sm font-bold uppercase tracking-wider">
                     Rent
                   </span>
-                  <span className="text-lg font-black">
+                  <span className="font-display text-lg font-black">
                     {formatPrice(film.rentalPrice)}
                   </span>
                 </div>
@@ -84,10 +84,10 @@ export default async function FilmPage({ params }: Props) {
 
               <div className="border border-[#2a2a2a] rounded p-4">
                 <div className="flex items-center justify-between mb-1">
-                  <span className="text-sm font-bold uppercase tracking-wider">
+                  <span className="font-display text-sm font-bold uppercase tracking-wider">
                     Own
                   </span>
-                  <span className="text-lg font-black">
+                  <span className="font-display text-lg font-black">
                     {formatPrice(film.purchasePrice)}
                   </span>
                 </div>

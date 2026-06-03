@@ -20,13 +20,13 @@ export default function Footer() {
         <div className="flex gap-6">
           <Link
             href="/films"
-            className="text-xs text-[#555] hover:text-white transition-colors uppercase tracking-widest"
+            className="font-display text-xs text-[#555] hover:text-white transition-colors uppercase tracking-widest"
           >
             Films
           </Link>
           <Link
             href="/terms"
-            className="text-xs text-[#555] hover:text-white transition-colors uppercase tracking-widest"
+            className="font-display text-xs text-[#555] hover:text-white transition-colors uppercase tracking-widest"
           >
             Terms
           </Link>

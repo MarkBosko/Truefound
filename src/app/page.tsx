@@ -37,7 +37,7 @@ export default async function HomePage() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d0d] via-[#0d0d0d]/40 to-transparent" />
             <div className="relative max-w-6xl mx-auto px-6 pb-16 w-full">
-              <p className="text-xs text-[#888] uppercase tracking-widest mb-2">
+              <p className="font-display text-xs text-[#888] uppercase tracking-widest mb-2">
                 Now Available
               </p>
               <h1 className="text-4xl sm:text-6xl font-black uppercase tracking-tight text-white max-w-xl leading-none">
@@ -49,13 +49,13 @@ export default async function HomePage() {
               <div className="flex gap-4 mt-6">
                 <Link
                   href={`/films/${hero.slug}`}
-                  className="bg-white text-black px-8 py-3 text-sm font-bold uppercase tracking-widest hover:bg-[#e0e0e0] transition-colors"
+                  className="font-display bg-white text-black px-8 py-3 text-sm font-bold uppercase tracking-widest hover:bg-[#e0e0e0] transition-colors"
                 >
                   View Film »
                 </Link>
                 <Link
                   href="/films"
-                  className="border border-[#555] text-white px-8 py-3 text-sm font-bold uppercase tracking-widest hover:border-white transition-colors"
+                  className="font-display border border-[#555] text-white px-8 py-3 text-sm font-bold uppercase tracking-widest hover:border-white transition-colors"
                 >
                   Browse All
                 </Link>
@@ -115,7 +115,7 @@ export default async function HomePage() {
               { label: "Stream", desc: "No downloads. Watch anywhere." },
             ].map(({ label, desc }) => (
               <div key={label}>
-                <p className="text-xs uppercase tracking-[0.3em] text-[#555] mb-2">{label}</p>
+                <p className="font-display text-xs uppercase tracking-[0.3em] text-[#555] mb-2">{label}</p>
                 <p className="text-sm text-[#888]">{desc}</p>
               </div>
             ))}

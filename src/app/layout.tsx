@@ -1,5 +1,18 @@
 import type { Metadata } from "next"
+import { Oswald, Lato } from "next/font/google"
 import "./globals.css"
+
+const oswald = Oswald({
+  subsets: ["latin"],
+  variable: "--font-oswald",
+  weight: ["400", "500", "600", "700"],
+})
+
+const lato = Lato({
+  subsets: ["latin"],
+  variable: "--font-lato",
+  weight: ["300", "400", "700"],
+})
 
 export const metadata: Metadata = {
   title: "True Found — Independent Films",
@@ -16,7 +29,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="h-full">
+    <html lang="en" className={`${oswald.variable} ${lato.variable} h-full`}>
       <body className="min-h-full flex flex-col bg-[#0d0d0d] text-[#f0f0f0]">
         {children}
       </body>
