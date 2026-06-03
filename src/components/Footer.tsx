@@ -1,17 +1,18 @@
 import Link from "next/link"
+import Image from "next/image"
 
 export default function Footer() {
   return (
     <footer className="mt-auto border-t border-[#222] py-10 px-6">
       <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-        <div className="flex items-center gap-2">
-          <span className="text-sm font-black tracking-widest uppercase text-white">
-            TRUE
-          </span>
-          <span className="text-sm text-[#444]">»</span>
-          <span className="text-sm font-black tracking-widest uppercase text-white">
-            FOUND
-          </span>
+        <div className="flex items-center">
+          <Image
+            src="/TrueFound-logo-transparent.png"
+            alt="True Found"
+            width={120}
+            height={32}
+            className="h-7 w-auto opacity-70"
+          />
         </div>
         <p className="text-xs text-[#555]">
           © {new Date().getFullYear()} True Found. All rights reserved.
