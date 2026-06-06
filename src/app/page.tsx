@@ -4,7 +4,6 @@ import Footer from "@/components/Footer"
 import FilmCard from "@/components/FilmCard"
 import HeroCarousel from "@/components/HeroCarousel"
 import { prisma } from "@/lib/db"
-import { formatPrice } from "@/lib/stripe"
 
 export const revalidate = 60
 
@@ -39,47 +38,29 @@ export default async function HomePage() {
           </section>
         )}
 
-        {/* Film grid */}
-        <section className="max-w-6xl mx-auto px-6 py-16">
-          <div className="flex items-center justify-between mb-10">
-            <h2 className="text-xs uppercase tracking-[0.3em] text-[#888]">
-              The Collection
-            </h2>
-            {films.length > 4 && (
+        {/* Horizontal film row */}
+        {films.length > 0 && (
+          <section className="py-8 px-6">
+            <div className="flex items-center justify-between mb-4 max-w-[calc(100vw-3rem)]">
+              <h2 className="text-xs uppercase tracking-[0.3em] text-[#888]">
+                The Collection
+              </h2>
               <Link
                 href="/films"
-                className="text-xs uppercase tracking-widest text-[#555] hover:text-white transition-colors"
+                className="font-display text-xs uppercase tracking-widest text-[#555] hover:text-white transition-colors"
               >
                 See All »
               </Link>
-            )}
-          </div>
-          {films.length === 0 ? (
-            <p className="text-[#555] text-sm">Films coming soon.</p>
-          ) : (
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+            </div>
+            <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide -mx-6 px-6">
               {films.map((film) => (
-                <FilmCard key={film.id} {...film} />
+                <div key={film.id} className="flex-none w-36 sm:w-44">
+                  <FilmCard {...film} />
+                </div>
               ))}
             </div>
-          )}
-        </section>
-
-        {/* Value prop strip */}
-        <section className="border-t border-[#222] py-14 px-6">
-          <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-10 text-center">
-            {[
-              { label: "Rent", desc: "48-hour access from $1.99" },
-              { label: "Own", desc: "Permanent access from $4.99" },
-              { label: "Stream", desc: "No downloads. Watch anywhere." },
-            ].map(({ label, desc }) => (
-              <div key={label}>
-                <p className="font-display text-xs uppercase tracking-[0.3em] text-[#555] mb-2">{label}</p>
-                <p className="text-sm text-[#888]">{desc}</p>
-              </div>
-            ))}
-          </div>
-        </section>
+          </section>
+        )}
       </main>
       <Footer />
     </>

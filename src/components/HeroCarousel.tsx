@@ -45,7 +45,7 @@ export default function HeroCarousel({ films }: { films: Film[] }) {
   const film = films[current]
 
   return (
-    <section className="relative h-[75vh] min-h-[520px] flex items-end overflow-hidden">
+    <section className="relative h-[58vh] min-h-[400px] flex items-end overflow-hidden">
       {/* Background layers — all rendered, crossfade with opacity */}
       {films.map((f, i) => (
         <div
