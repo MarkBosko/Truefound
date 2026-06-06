@@ -1,8 +1,8 @@
 import Link from "next/link"
-import Image from "next/image"
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
 import FilmCard from "@/components/FilmCard"
+import HeroCarousel from "@/components/HeroCarousel"
 import { prisma } from "@/lib/db"
 import { formatPrice } from "@/lib/stripe"
 
@@ -18,60 +18,19 @@ async function getFeaturedFilms() {
 
 export default async function HomePage() {
   const films = await getFeaturedFilms()
-  const hero = films[0]
 
   return (
     <>
       <Header />
       <main className="flex-1">
         {/* Hero */}
-        {hero ? (
-          <section className="relative h-[70vh] min-h-[480px] flex items-end">
-            <Image
-              src={hero.posterUrl}
-              alt={hero.title}
-              fill
-              priority
-              className="object-cover"
-              sizes="100vw"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d0d] via-[#0d0d0d]/40 to-transparent" />
-            <div className="relative max-w-6xl mx-auto px-6 pb-16 w-full">
-              <p className="font-display text-xs text-[#888] uppercase tracking-widest mb-2">
-                Now Available
-              </p>
-              <h1 className="text-4xl sm:text-6xl font-black uppercase tracking-tight text-white max-w-xl leading-none">
-                {hero.title}
-              </h1>
-              <p className="text-[#aaa] mt-3 max-w-md text-sm leading-relaxed line-clamp-2">
-                {hero.description}
-              </p>
-              <div className="flex gap-4 mt-6">
-                <Link
-                  href={`/films/${hero.slug}`}
-                  className="font-display bg-white text-black px-8 py-3 text-sm font-bold uppercase tracking-widest hover:bg-[#e0e0e0] transition-colors"
-                >
-                  View Film »
-                </Link>
-                <Link
-                  href="/films"
-                  className="font-display border border-[#555] text-white px-8 py-3 text-sm font-bold uppercase tracking-widest hover:border-white transition-colors"
-                >
-                  Browse All
-                </Link>
-              </div>
-              <p className="mt-4 text-xs text-[#666]">
-                Rent from {formatPrice(hero.rentalPrice)} &nbsp;·&nbsp; Own from {formatPrice(hero.purchasePrice)}
-              </p>
-            </div>
-          </section>
+        {films.length > 0 ? (
+          <HeroCarousel films={films} />
         ) : (
           <section className="h-[40vh] flex items-center justify-center border-b border-[#222]">
             <div className="text-center">
               <div className="flex items-center justify-center gap-3 mb-4">
-                <span className="text-4xl font-black tracking-widest uppercase">TRUE</span>
-                <span className="text-4xl text-[#555]">»</span>
-                <span className="text-4xl font-black tracking-widest uppercase">FOUND</span>
+                <span className="font-display text-4xl font-black tracking-widest uppercase">True Found</span>
               </div>
               <p className="text-[#666] text-sm uppercase tracking-widest">
                 Independent films, handpicked.
