@@ -44,7 +44,7 @@ export default function AdminLoginPage() {
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="text-xs uppercase tracking-widest text-[#555] block mb-2">
+            <label className="text-xs uppercase tracking-widest text-[#aaa] block mb-2">
               Email
             </label>
             <input
@@ -56,7 +56,7 @@ export default function AdminLoginPage() {
             />
           </div>
           <div>
-            <label className="text-xs uppercase tracking-widest text-[#555] block mb-2">
+            <label className="text-xs uppercase tracking-widest text-[#aaa] block mb-2">
               Password
             </label>
             <input

@@ -26,7 +26,7 @@ export default async function AdminFilmsPage() {
         ) : (
           <table className="w-full text-sm">
             <thead className="border-b border-[#1a1a1a]">
-              <tr className="text-xs uppercase tracking-widest text-[#555]">
+              <tr className="text-xs uppercase tracking-widest text-[#888]">
                 <th className="text-left px-6 py-3">Title</th>
                 <th className="text-left px-6 py-3">Year</th>
                 <th className="text-right px-6 py-3">Rent</th>
@@ -48,7 +48,7 @@ export default async function AdminFilmsPage() {
                   <td className="px-6 py-4 text-right">
                     <Link
                       href={`/admin/films/${film.id}`}
-                      className="text-xs text-[#555] hover:text-white transition-colors uppercase tracking-widest"
+                      className="text-xs text-[#888] hover:text-white transition-colors uppercase tracking-widest"
                     >
                       Edit
                     </Link>

@@ -29,7 +29,7 @@ export default async function AdminOrdersPage() {
         ) : (
           <table className="w-full text-sm">
             <thead className="border-b border-[#1a1a1a]">
-              <tr className="text-xs uppercase tracking-widest text-[#555]">
+              <tr className="text-xs uppercase tracking-widest text-[#888]">
                 <th className="text-left px-6 py-3">Date</th>
                 <th className="text-left px-6 py-3">Film</th>
                 <th className="text-left px-6 py-3">Email</th>

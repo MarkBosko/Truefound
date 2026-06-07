@@ -64,7 +64,7 @@ export default function FilmForm({ film }: { film?: Film }) {
     opts: { type?: string; required?: boolean; placeholder?: string; defaultValue?: string | number } = {}
   ) => (
     <div key={name}>
-      <label className="text-xs uppercase tracking-widest text-[#555] block mb-2">
+      <label className="text-xs uppercase tracking-widest text-[#aaa] block mb-2">
         {label}
       </label>
       <input
@@ -84,7 +84,7 @@ export default function FilmForm({ film }: { film?: Film }) {
       {field("title", "Title", { defaultValue: film?.title })}
 
       <div>
-        <label className="text-xs uppercase tracking-widest text-[#555] block mb-2">
+        <label className="text-xs uppercase tracking-widest text-[#aaa] block mb-2">
           Description
         </label>
         <textarea
