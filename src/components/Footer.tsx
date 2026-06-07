@@ -11,7 +11,8 @@ export default function Footer() {
             alt="True Found"
             width={120}
             height={32}
-            className="h-7 w-auto opacity-70"
+            className="h-7 w-auto"
+            style={{ filter: 'brightness(1.35) drop-shadow(0 0 6px rgba(255,255,255,0.9)) drop-shadow(0 0 16px rgba(255,255,255,0.45))' }}
           />
         </div>
         <p className="text-xs text-[#555]">
