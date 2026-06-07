@@ -19,6 +19,7 @@ model Film {
   vimeoTrailerId String
   vimeoFilmId    String
   posterUrl      String
+  heroImageUrl   String?
   rentalPrice    Int
   purchasePrice  Int
   active         Boolean  @default(true)

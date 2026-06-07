@@ -10,6 +10,7 @@ type Film = {
   slug: string
   description: string
   posterUrl: string
+  heroImageUrl: string | null
   rentalPrice: number
   purchasePrice: number
 }
@@ -56,11 +57,11 @@ export default function HeroCarousel({ films }: { films: Film[] }) {
           }`}
         >
           <Image
-            src={f.posterUrl}
+            src={f.heroImageUrl ?? f.posterUrl}
             alt=""
             fill
             priority={i === 0}
-            className="object-cover object-top"
+            className={`object-cover ${f.heroImageUrl ? "object-center" : "object-top"}`}
             sizes="100vw"
           />
         </div>

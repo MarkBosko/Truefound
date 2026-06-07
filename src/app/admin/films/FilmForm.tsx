@@ -15,6 +15,7 @@ type Film = {
   vimeoTrailerId?: string
   vimeoFilmId?: string
   posterUrl?: string
+  heroImageUrl?: string | null
   rentalPrice?: number
   purchasePrice?: number
 }
@@ -105,7 +106,8 @@ export default function FilmForm({ film }: { film?: Film }) {
         {field("runtime", "Runtime (min)", { type: "number", defaultValue: film?.runtime })}
       </div>
 
-      {field("posterUrl", "Poster Image URL", { defaultValue: film?.posterUrl, placeholder: "https://..." })}
+      {field("posterUrl", "Poster Image URL", { defaultValue: film?.posterUrl, placeholder: "https://... (portrait, used in film cards)" })}
+      {field("heroImageUrl", "Hero Image URL", { required: false, defaultValue: film?.heroImageUrl ?? "", placeholder: "https://... (landscape, used in homepage hero — optional)" })}
 
       <div className="grid grid-cols-2 gap-4">
         {field("vimeoTrailerId", "Vimeo Trailer ID", { defaultValue: film?.vimeoTrailerId, placeholder: "e.g. 123456789" })}
