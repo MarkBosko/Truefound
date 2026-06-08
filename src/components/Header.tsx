@@ -11,7 +11,7 @@ export default function Header() {
             alt="True Found"
             width={180}
             height={48}
-            className="h-10 w-auto"
+            className="h-16 w-auto"
             style={{ filter: 'brightness(1.35) drop-shadow(0 0 8px rgba(255,255,255,1)) drop-shadow(0 0 20px rgba(255,255,255,0.55))' }}
             priority
           />
