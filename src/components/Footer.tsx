@@ -46,7 +46,7 @@ export default function Footer() {
             />
             <div className="flex items-start gap-2.5">
               <USFlag />
-              <p className="text-xs text-[#777] leading-relaxed">
+              <p className="text-xs text-[#aaa] leading-relaxed">
                 True Found is a U.S. founded and based company that licenses films
                 directly from independent filmmakers.
               </p>
@@ -58,10 +58,10 @@ export default function Footer() {
             <p className="font-display text-xs uppercase tracking-[0.3em] text-[#888] mb-1">
               Customer Support
             </p>
-            <p className="text-xs text-[#777]">James &ldquo;Johnny&rdquo; Sinclair</p>
+            <p className="text-xs text-[#aaa]">James &ldquo;Johnny&rdquo; Sinclair</p>
             <a
               href="mailto:johnny@truefoundmovies.com"
-              className="text-xs text-[#777] hover:text-white transition-colors"
+              className="text-xs text-[#aaa] hover:text-white transition-colors"
             >
               johnny@truefoundmovies.com
             </a>
@@ -73,22 +73,22 @@ export default function Footer() {
               Secure Checkout
             </p>
             <div className="flex items-center gap-2">
-              <svg className="w-3.5 h-3.5 text-[#777] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <svg className="w-3.5 h-3.5 text-[#aaa] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
               </svg>
-              <span className="text-xs text-[#777]">Payments secured by Stripe</span>
+              <span className="text-xs text-[#aaa]">Payments secured by Stripe</span>
             </div>
-            <p className="text-xs text-[#555] leading-relaxed">
+            <p className="text-xs text-[#888] leading-relaxed">
               Your payment information is never stored on our servers.
             </p>
             <div className="flex gap-5 mt-2">
-              <Link href="/films" className="font-display text-xs text-[#666] hover:text-white transition-colors uppercase tracking-widest">
+              <Link href="/films" className="font-display text-xs text-[#999] hover:text-white transition-colors uppercase tracking-widest">
                 Films
               </Link>
-              <Link href="/terms" className="font-display text-xs text-[#666] hover:text-white transition-colors uppercase tracking-widest">
+              <Link href="/terms" className="font-display text-xs text-[#999] hover:text-white transition-colors uppercase tracking-widest">
                 Terms
               </Link>
-              <Link href="/about" className="font-display text-xs text-[#666] hover:text-white transition-colors uppercase tracking-widest">
+              <Link href="/about" className="font-display text-xs text-[#999] hover:text-white transition-colors uppercase tracking-widest">
                 About
               </Link>
             </div>
@@ -98,7 +98,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="border-t border-[#1a1a1a] pt-6">
-          <p className="text-xs text-[#444] text-center">
+          <p className="text-xs text-[#666] text-center">
             © {new Date().getFullYear()} True Found. All rights reserved.&nbsp;·&nbsp;All films licensed for digital distribution.
           </p>
         </div>
