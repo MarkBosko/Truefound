@@ -103,7 +103,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-[#1a1a1a] pt-6">
           <p className="text-xs text-[#666] text-center">
-            © {new Date().getFullYear()} True Found. All rights reserved.&nbsp;·&nbsp;All films licensed for digital distribution.
+            © {new Date().getFullYear()}{" "}True Found. All rights reserved.&nbsp;·&nbsp;All films licensed for digital distribution.
           </p>
         </div>
 
