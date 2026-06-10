@@ -107,7 +107,7 @@ export default function FilmForm({ film }: { film?: Film }) {
             defaultValue={film?.category ?? "CRYPTIDS"}
             className="w-full bg-[#111] border border-[#222] text-white px-4 py-3 text-sm focus:outline-none focus:border-[#555]"
           >
-            <option value="CRYPTIDS">Cryptids</option>
+            <option value="CRYPTIDS">Monsters</option>
             <option value="ALIENS">Aliens</option>
             <option value="PARANORMAL">Paranormal</option>
           </select>

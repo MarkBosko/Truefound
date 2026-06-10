@@ -11,7 +11,7 @@ export const metadata = {
 }
 
 const CATEGORIES = [
-  { key: "CRYPTIDS", label: "Cryptids" },
+  { key: "CRYPTIDS", label: "Monsters" },
   { key: "ALIENS", label: "Aliens" },
   { key: "PARANORMAL", label: "Paranormal" },
 ]

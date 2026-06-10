@@ -41,7 +41,7 @@ export default async function HomePage() {
         {/* Category rows */}
         {films.length > 0 && (() => {
           const CATEGORIES = [
-            { key: "CRYPTIDS", label: "Cryptids" },
+            { key: "CRYPTIDS", label: "Monsters" },
             { key: "ALIENS", label: "Aliens" },
             { key: "PARANORMAL", label: "Paranormal" },
           ]

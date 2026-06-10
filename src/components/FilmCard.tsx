@@ -3,7 +3,7 @@ import Image from "next/image"
 import { formatPrice } from "@/lib/stripe"
 
 const CATEGORY_LABELS: Record<string, string> = {
-  CRYPTIDS: "Cryptids",
+  CRYPTIDS: "Monsters",
   ALIENS: "Aliens",
   PARANORMAL: "Paranormal",
 }
