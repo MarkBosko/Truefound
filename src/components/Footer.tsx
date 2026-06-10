@@ -38,14 +38,16 @@ export default function Footer() {
 
           {/* Logo + about */}
           <div className="flex flex-col gap-5">
-            <Image
-              src="/TrueFound-logo-transparent.png"
-              alt="True Found"
-              width={180}
-              height={48}
-              className="h-10 w-auto"
-              style={{ width: 'auto', height: '40px', filter: 'brightness(1.5) drop-shadow(0 0 8px rgba(255,255,255,1)) drop-shadow(0 0 20px rgba(255,255,255,0.5))' }}
-            />
+            <div className="w-fit">
+              <Image
+                src="/TrueFound-logo-transparent.png"
+                alt="True Found"
+                width={180}
+                height={48}
+                className="h-10 w-auto"
+                style={{ filter: 'brightness(1.5) drop-shadow(0 0 8px rgba(255,255,255,1)) drop-shadow(0 0 20px rgba(255,255,255,0.5))' }}
+              />
+            </div>
             <div className="flex items-start gap-2.5">
               <USFlag />
               <p className="text-xs text-[#777] leading-relaxed">
