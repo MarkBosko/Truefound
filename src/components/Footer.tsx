@@ -1,5 +1,4 @@
 import Link from "next/link"
-import Image from "next/image"
 
 const USFlag = () => (
   <svg width="26" height="16" viewBox="0 0 26 16" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0 rounded-sm">
@@ -36,18 +35,8 @@ export default function Footer() {
         {/* Main footer grid */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 mb-10">
 
-          {/* Logo + about */}
+          {/* About */}
           <div className="flex flex-col gap-5">
-            <Link href="/" className="flex items-center">
-              <Image
-                src="/TrueFound-logo-transparent.png"
-                alt="True Found"
-                width={180}
-                height={48}
-                className="h-10 w-auto"
-                style={{ filter: 'brightness(1.5) drop-shadow(0 0 8px rgba(255,255,255,1)) drop-shadow(0 0 20px rgba(255,255,255,0.5))' }}
-              />
-            </Link>
             <div className="flex items-start gap-2.5">
               <USFlag />
               <p className="text-xs text-[#aaa] leading-relaxed">
