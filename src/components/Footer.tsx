@@ -60,21 +60,13 @@ export default function Footer() {
             <p className="font-display text-xs uppercase tracking-[0.3em] text-[#888] mb-1">
               Customer Support
             </p>
+            <p className="text-xs text-[#777]">James &ldquo;Johnny&rdquo; Sinclair</p>
             <a
-              href="mailto:customer@truefoundmovies.com"
+              href="mailto:johnny@truefoundmovies.com"
               className="text-xs text-[#777] hover:text-white transition-colors"
             >
-              customer@truefoundmovies.com
+              johnny@truefoundmovies.com
             </a>
-            <a
-              href="tel:+10000000000"
-              className="text-xs text-[#777] hover:text-white transition-colors"
-            >
-              1-800-XXX-XXXX
-            </a>
-            <p className="text-xs text-[#555] mt-1">
-              Mon–Fri, 9am–6pm ET
-            </p>
           </div>
 
           {/* Trust + nav */}
