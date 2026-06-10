@@ -10,7 +10,7 @@ type Film = {
   description?: string
   director?: string
   year?: number
-  genre?: string
+  category?: string
   runtime?: number
   vimeoTrailerId?: string
   vimeoFilmId?: string
@@ -98,7 +98,20 @@ export default function FilmForm({ film }: { film?: Film }) {
 
       <div className="grid grid-cols-2 gap-4">
         {field("director", "Director", { defaultValue: film?.director })}
-        {field("genre", "Genre", { defaultValue: film?.genre, placeholder: "e.g. Documentary" })}
+        <div>
+          <label className="text-xs uppercase tracking-widest text-[#aaa] block mb-2">
+            Category
+          </label>
+          <select
+            name="category"
+            defaultValue={film?.category ?? "CRYPTIDS"}
+            className="w-full bg-[#111] border border-[#222] text-white px-4 py-3 text-sm focus:outline-none focus:border-[#555]"
+          >
+            <option value="CRYPTIDS">Cryptids</option>
+            <option value="ALIENS">Aliens</option>
+            <option value="PARANORMAL">Paranormal</option>
+          </select>
+        </div>
       </div>
 
       <div className="grid grid-cols-2 gap-4">

@@ -43,7 +43,7 @@ export default async function FilmPage({ params }: Props) {
           {/* Film info */}
           <div className="lg:col-span-2">
             <p className="text-xs uppercase tracking-[0.3em] text-[#555] mb-2">
-              {film.genre} · {film.year} · {film.runtime} min
+              {film.category.charAt(0) + film.category.slice(1).toLowerCase()} · {film.year} · {film.runtime} min
             </p>
             <h1 className="text-4xl font-black uppercase tracking-tight text-white mb-2">
               {film.title}

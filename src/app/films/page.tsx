@@ -10,11 +10,22 @@ export const metadata = {
   description: "Browse the full collection of independent films.",
 }
 
+const CATEGORIES = [
+  { key: "CRYPTIDS", label: "Cryptids" },
+  { key: "ALIENS", label: "Aliens" },
+  { key: "PARANORMAL", label: "Paranormal" },
+]
+
 export default async function FilmsPage() {
   const films = await prisma.film.findMany({
     where: { active: true },
     orderBy: { createdAt: "desc" },
   })
+
+  const grouped = CATEGORIES.map((cat) => ({
+    ...cat,
+    films: films.filter((f) => f.category === cat.key),
+  })).filter((cat) => cat.films.length > 0)
 
   return (
     <>
@@ -29,16 +40,25 @@ export default async function FilmsPage() {
           </h1>
         </div>
 
-        {films.length === 0 ? (
+        {grouped.length === 0 ? (
           <div className="py-24 text-center">
             <p className="text-[#555] uppercase tracking-widest text-sm">
               Films coming soon.
             </p>
           </div>
         ) : (
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
-            {films.map((film) => (
-              <FilmCard key={film.id} {...film} />
+          <div className="space-y-16">
+            {grouped.map((cat) => (
+              <section key={cat.key}>
+                <h2 className="text-xs uppercase tracking-[0.3em] text-[#888] mb-6">
+                  {cat.label}
+                </h2>
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+                  {cat.films.map((film) => (
+                    <FilmCard key={film.id} {...film} />
+                  ))}
+                </div>
+              </section>
             ))}
           </div>
         )}

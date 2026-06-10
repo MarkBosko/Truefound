@@ -38,29 +38,45 @@ export default async function HomePage() {
           </section>
         )}
 
-        {/* Horizontal film row */}
-        {films.length > 0 && (
-          <section className="py-8 px-6">
-            <div className="flex items-center justify-between mb-4 max-w-[calc(100vw-3rem)]">
-              <h2 className="text-xs uppercase tracking-[0.3em] text-[#888]">
-                The Collection
-              </h2>
-              <Link
-                href="/films"
-                className="font-display text-xs uppercase tracking-widest text-[#555] hover:text-white transition-colors"
-              >
-                See All »
-              </Link>
-            </div>
-            <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide -mx-6 px-6">
-              {films.map((film) => (
-                <div key={film.id} className="flex-none w-36 sm:w-44">
-                  <FilmCard {...film} />
-                </div>
+        {/* Category rows */}
+        {films.length > 0 && (() => {
+          const CATEGORIES = [
+            { key: "CRYPTIDS", label: "Cryptids" },
+            { key: "ALIENS", label: "Aliens" },
+            { key: "PARANORMAL", label: "Paranormal" },
+          ]
+          const grouped = CATEGORIES.map((cat) => ({
+            ...cat,
+            films: films.filter((f) => f.category === cat.key),
+          })).filter((cat) => cat.films.length > 0)
+
+          return (
+            <div className="py-6 space-y-8">
+              {grouped.map((cat) => (
+                <section key={cat.key} className="px-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <h2 className="text-xs uppercase tracking-[0.3em] text-[#888]">
+                      {cat.label}
+                    </h2>
+                    <Link
+                      href="/films"
+                      className="font-display text-xs uppercase tracking-widest text-[#555] hover:text-white transition-colors"
+                    >
+                      See All »
+                    </Link>
+                  </div>
+                  <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide -mx-6 px-6">
+                    {cat.films.map((film) => (
+                      <div key={film.id} className="flex-none w-36 sm:w-44">
+                        <FilmCard {...film} />
+                      </div>
+                    ))}
+                  </div>
+                </section>
               ))}
             </div>
-          </section>
-        )}
+          )
+        })()}
       </main>
       <Footer />
     </>

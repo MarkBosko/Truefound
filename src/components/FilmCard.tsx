@@ -2,12 +2,18 @@ import Link from "next/link"
 import Image from "next/image"
 import { formatPrice } from "@/lib/stripe"
 
+const CATEGORY_LABELS: Record<string, string> = {
+  CRYPTIDS: "Cryptids",
+  ALIENS: "Aliens",
+  PARANORMAL: "Paranormal",
+}
+
 type FilmCardProps = {
   title: string
   slug: string
   director: string
   year: number
-  genre: string
+  category: string
   posterUrl: string
   rentalPrice: number
   purchasePrice: number
@@ -18,7 +24,7 @@ export default function FilmCard({
   slug,
   director,
   year,
-  genre,
+  category,
   posterUrl,
   rentalPrice,
   purchasePrice,
@@ -45,7 +51,7 @@ export default function FilmCard({
           {title}
         </h3>
         <p className="text-xs text-[#666] mt-0.5">
-          {director} · {year} · {genre}
+          {director} · {year} · {CATEGORY_LABELS[category] ?? category}
         </p>
       </div>
     </Link>

@@ -14,12 +14,12 @@ model Film {
   description    String
   director       String
   year           Int
-  genre          String
   runtime        Int
   vimeoTrailerId String
   vimeoFilmId    String
   posterUrl      String
   heroImageUrl   String?
+  category       Category @default(CRYPTIDS)
   rentalPrice    Int
   purchasePrice  Int
   active         Boolean  @default(true)
@@ -50,4 +50,10 @@ model Order {
 enum OrderType {
   RENTAL
   PURCHASE
+}
+
+enum Category {
+  CRYPTIDS
+  ALIENS
+  PARANORMAL
 }
