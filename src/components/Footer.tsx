@@ -37,12 +37,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 mb-10">
 
           {/* Logo + about */}
-          <div className="flex flex-col gap-5">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+          <div className="flex flex-col items-start gap-5">
+            <Image
               src="/TrueFound-logo-transparent.png"
               alt="True Found"
-              style={{ height: '40px', width: 'auto', maxWidth: '180px', display: 'block', filter: 'brightness(1.5) drop-shadow(0 0 8px rgba(255,255,255,1)) drop-shadow(0 0 20px rgba(255,255,255,0.5))' }}
+              width={180}
+              height={48}
+              className="h-10 w-auto"
+              style={{ filter: 'brightness(1.5) drop-shadow(0 0 8px rgba(255,255,255,1)) drop-shadow(0 0 20px rgba(255,255,255,0.5))' }}
             />
             <div className="flex items-start gap-2.5">
               <USFlag />
