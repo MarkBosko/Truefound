@@ -1,5 +1,6 @@
 import { prisma } from "@/lib/db"
 import { formatPrice } from "@/lib/stripe"
+import StickyBar from "./StickyBar"
 
 export const revalidate = 60
 
@@ -436,6 +437,15 @@ export default async function BigfootHoaxPage() {
           )}
         </div>
       </section>
+
+      {/* Sticky CTA bar */}
+      {film && (
+        <StickyBar
+          rentalPrice={formatPrice(film.rentalPrice)}
+          purchasePrice={formatPrice(film.purchasePrice)}
+          href={HOTC_URL}
+        />
+      )}
 
       {/* Footer */}
       <footer className="border-t border-[#141410] px-6 py-8">
