@@ -49,6 +49,18 @@ export default async function BigfootHoaxPage() {
 
       {/* Hero */}
       <section className="relative min-h-[88vh] flex items-center px-6 py-24 overflow-hidden">
+        {/* Hero background image */}
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: "url(https://res.cloudinary.com/dm7ckxbgc/image/upload/v1781280563/BF_News_image_qlqnbb.jpg)",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        />
+        {/* Dark gradient overlay — heavier on the left so text is readable */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#080808] via-[#080808]/85 to-[#080808]/50" />
+        {/* Scanline texture */}
         <div
           className="absolute inset-0 pointer-events-none opacity-[0.04]"
           style={{
@@ -214,8 +226,18 @@ export default async function BigfootHoaxPage() {
       </section>
 
       {/* Capturing Bigfoot / Overlook Festival */}
-      <section className="border-t border-[#141410] bg-[#0c0c08] px-6 py-24">
-        <div className="max-w-3xl mx-auto">
+      <section className="border-t border-[#141410] relative px-6 py-24 overflow-hidden">
+        {/* Trail-cam background */}
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: "url(https://res.cloudinary.com/dm7ckxbgc/image/upload/v1781280555/PURSUITnew_zl8ouo.jpg)",
+            backgroundSize: "cover",
+            backgroundPosition: "center top",
+          }}
+        />
+        <div className="absolute inset-0 bg-[#080808]/92" />
+        <div className="max-w-3xl mx-auto relative z-10">
           <div className="font-mono text-xs text-[#9b2222] uppercase tracking-[0.4em] mb-3">
             File No. 003 — The 2026 Conspiracy
           </div>
