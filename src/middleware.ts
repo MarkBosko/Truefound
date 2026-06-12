@@ -16,20 +16,35 @@ async function isValidToken(req: NextRequest): Promise<boolean> {
 }
 
 export async function middleware(req: NextRequest) {
-  const isLoginPage = req.nextUrl.pathname === "/admin/login"
-  const valid = await isValidToken(req)
+  const hostname = req.headers.get("host") || ""
+  const pathname = req.nextUrl.pathname
 
-  if (!valid && !isLoginPage) {
-    return NextResponse.redirect(new URL("/admin/login", req.url))
+  // Route bigfoothoax.com to the dedicated landing page
+  if (
+    hostname.includes("bigfoothoax.com") &&
+    !pathname.startsWith("/api") &&
+    !pathname.startsWith("/_next")
+  ) {
+    return NextResponse.rewrite(new URL("/bigfoothoax", req.url))
   }
 
-  if (valid && isLoginPage) {
-    return NextResponse.redirect(new URL("/admin", req.url))
+  // Admin auth guard
+  if (pathname.startsWith("/admin")) {
+    const isLoginPage = pathname === "/admin/login"
+    const valid = await isValidToken(req)
+
+    if (!valid && !isLoginPage) {
+      return NextResponse.redirect(new URL("/admin/login", req.url))
+    }
+
+    if (valid && isLoginPage) {
+      return NextResponse.redirect(new URL("/admin", req.url))
+    }
   }
 
   return NextResponse.next()
 }
 
 export const config = {
-  matcher: ["/admin/:path*"],
+  matcher: ["/((?!_next/static|_next/image|favicon.ico).*)","/admin/:path*"],
 }
