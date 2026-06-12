@@ -227,13 +227,13 @@ export default async function BigfootHoaxPage() {
             <div className="flex-shrink-0 sm:w-48">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="https://res.cloudinary.com/dm7ckxbgc/image/upload/w_400,e_upscale,q_auto/v1781286772/166625683_1467958450_mqzsjy.jpg"
-                alt="Archival Bigfoot evidence photo"
-                className="w-full grayscale contrast-110 opacity-80"
-                style={{ border: "1px solid rgba(200,168,75,0.15)", filter: "grayscale(100%) contrast(1.1) brightness(0.85)" }}
+                src="https://res.cloudinary.com/dm7ckxbgc/image/upload/w_400,e_upscale,q_auto/v1781291525/tom_team_xd5ylw.jpg"
+                alt="Tom Biscardi and his expedition team"
+                className="w-full"
+                style={{ border: "1px solid rgba(200,168,75,0.15)", filter: "contrast(1.1) brightness(0.9)" }}
               />
               <p className="font-mono text-xs text-[#444] uppercase tracking-widest mt-2 text-center">
-                Archival evidence
+                Tom Biscardi · Expedition Team
               </p>
             </div>
           </div>
