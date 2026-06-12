@@ -138,6 +138,39 @@ export default async function BigfootHoaxPage() {
         </div>
       </section>
 
+      {/* Trailer */}
+      <section className="border-t border-[#141410] bg-[#0c0c08] px-6 py-16">
+        <div className="max-w-3xl mx-auto">
+          <div className="font-mono text-xs text-[#c8a84b] uppercase tracking-[0.4em] mb-4">
+            Watch the Trailer
+          </div>
+          <div className="relative w-full aspect-video bg-black">
+            <iframe
+              src="https://embed.vhx.tv/videos/3999458?autoplay=0"
+              className="absolute inset-0 w-full h-full"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+          {film && (
+            <div className="flex gap-4 flex-wrap mt-8">
+              <a
+                href={HOTC_URL}
+                className="bg-[#c8a84b] text-black px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-[#dbb85a] transition-colors"
+              >
+                Rent — {formatPrice(film.rentalPrice)}
+              </a>
+              <a
+                href={HOTC_URL}
+                className="border border-[#c8a84b] text-[#c8a84b] px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-[#c8a84b] hover:text-black transition-colors"
+              >
+                Own It — {formatPrice(film.purchasePrice)}
+              </a>
+            </div>
+          )}
+        </div>
+      </section>
+
       {/* Iconic Footage section */}
       <section className="border-t border-[#141410] bg-[#0c0c08] px-6 py-24">
         <div className="max-w-3xl mx-auto">
