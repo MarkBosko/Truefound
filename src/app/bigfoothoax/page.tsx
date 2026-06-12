@@ -71,7 +71,7 @@ export default async function BigfootHoaxPage() {
 
         <div className="max-w-5xl mx-auto w-full grid grid-cols-1 lg:grid-cols-5 gap-16 items-center relative z-10">
           <div className="lg:col-span-3">
-            <div className="inline-flex items-center gap-2 border border-[#6b1818] text-[#9b2222] font-mono text-xs tracking-[0.35em] uppercase px-3 py-1.5 mb-10">
+            <div className="inline-flex items-center gap-2 border border-[#cc2222] text-[#ff4444] font-mono text-xs tracking-[0.35em] uppercase px-3 py-1.5 mb-10">
               <span>⚠</span> Suppressed · 2012 · Now Available
             </div>
 
@@ -238,7 +238,7 @@ export default async function BigfootHoaxPage() {
         />
         <div className="absolute inset-0 bg-[#080808]/92" />
         <div className="max-w-3xl mx-auto relative z-10">
-          <div className="font-mono text-xs text-[#9b2222] uppercase tracking-[0.4em] mb-3">
+          <div className="font-mono text-xs text-[#ff4444] uppercase tracking-[0.4em] mb-3">
             File No. 003 — The 2026 Conspiracy
           </div>
           <h2 className="text-3xl font-black uppercase tracking-tight text-white mb-10">
@@ -261,7 +261,7 @@ export default async function BigfootHoaxPage() {
               &ldquo;Definitive.&rdquo; &ldquo;The smoking gun.&rdquo;
             </p>
 
-            <div className="border border-[#9b2222]/30 bg-[#9b2222]/5 p-6 my-8">
+            <div className="border border-[#cc2222]/50 bg-[#cc2222]/8 p-6 my-8">
               <p className="text-white font-bold leading-relaxed">
                 Tom Biscardi documented all of this in 2012. Heironimus. The confession.
                 The firsthand witnesses. The proof. He did it first — and paid for it
