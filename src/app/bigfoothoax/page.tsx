@@ -97,17 +97,13 @@ export default async function BigfootHoaxPage() {
 
             {film && (
               <div className="flex gap-4 flex-wrap">
-                <a
-                  href={HOTC_URL}
-                  className="bg-[#c8a84b] text-black px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-[#dbb85a] transition-colors"
-                >
-                  Rent — {formatPrice(film.rentalPrice)}
+                <a href={HOTC_URL} className="bg-[#c8a84b] text-black px-8 py-4 hover:bg-[#dbb85a] transition-colors text-center">
+                  <div className="font-mono text-xs uppercase tracking-widest mb-0.5">Rent</div>
+                  <div className="text-2xl font-black">{formatPrice(film.rentalPrice)}</div>
                 </a>
-                <a
-                  href={HOTC_URL}
-                  className="border border-[#c8a84b] text-[#c8a84b] px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-[#c8a84b] hover:text-black transition-colors"
-                >
-                  Own It — {formatPrice(film.purchasePrice)}
+                <a href={HOTC_URL} className="border border-[#c8a84b] text-[#c8a84b] px-8 py-4 hover:bg-[#c8a84b] hover:text-black transition-colors text-center">
+                  <div className="font-mono text-xs uppercase tracking-widest mb-0.5">Own It</div>
+                  <div className="text-2xl font-black">{formatPrice(film.purchasePrice)}</div>
                 </a>
               </div>
             )}
@@ -154,17 +150,13 @@ export default async function BigfootHoaxPage() {
           </div>
           {film && (
             <div className="flex gap-4 flex-wrap mt-8">
-              <a
-                href={HOTC_URL}
-                className="bg-[#c8a84b] text-black px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-[#dbb85a] transition-colors"
-              >
-                Rent — {formatPrice(film.rentalPrice)}
+              <a href={HOTC_URL} className="bg-[#c8a84b] text-black px-8 py-4 hover:bg-[#dbb85a] transition-colors text-center">
+                <div className="font-mono text-xs uppercase tracking-widest mb-0.5">Rent</div>
+                <div className="text-2xl font-black">{formatPrice(film.rentalPrice)}</div>
               </a>
-              <a
-                href={HOTC_URL}
-                className="border border-[#c8a84b] text-[#c8a84b] px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-[#c8a84b] hover:text-black transition-colors"
-              >
-                Own It — {formatPrice(film.purchasePrice)}
+              <a href={HOTC_URL} className="border border-[#c8a84b] text-[#c8a84b] px-8 py-4 hover:bg-[#c8a84b] hover:text-black transition-colors text-center">
+                <div className="font-mono text-xs uppercase tracking-widest mb-0.5">Own It</div>
+                <div className="text-2xl font-black">{formatPrice(film.purchasePrice)}</div>
               </a>
             </div>
           )}
@@ -448,23 +440,50 @@ export default async function BigfootHoaxPage() {
                 {film.description}
               </p>
 
-              <div className="flex gap-4 flex-wrap mb-8">
-                <a
-                  href={HOTC_URL}
-                  className="bg-[#c8a84b] text-black px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-[#dbb85a] transition-colors"
-                >
-                  Rent — {formatPrice(film.rentalPrice)}
+              {/* What you get */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+                <a href={HOTC_URL} className="group block border border-[#c8a84b]/40 bg-[#0f0f0a] hover:bg-[#c8a84b]/10 hover:border-[#c8a84b] transition-all p-6">
+                  <div className="font-mono text-xs text-[#666] uppercase tracking-widest mb-3">Rent</div>
+                  <div className="text-5xl font-black text-[#c8a84b] mb-3">{formatPrice(film.rentalPrice)}</div>
+                  <ul className="space-y-2">
+                    <li className="flex items-center gap-2 text-sm text-[#aaa]">
+                      <span className="text-[#c8a84b]">✓</span> 48-hour streaming access
+                    </li>
+                    <li className="flex items-center gap-2 text-sm text-[#aaa]">
+                      <span className="text-[#c8a84b]">✓</span> Watch on any device
+                    </li>
+                    <li className="flex items-center gap-2 text-sm text-[#aaa]">
+                      <span className="text-[#c8a84b]">✓</span> Link emailed instantly
+                    </li>
+                  </ul>
+                  <div className="mt-5 text-xs font-bold uppercase tracking-widest text-[#c8a84b] group-hover:underline">
+                    Rent Now →
+                  </div>
                 </a>
-                <a
-                  href={HOTC_URL}
-                  className="border border-[#c8a84b] text-[#c8a84b] px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-[#c8a84b] hover:text-black transition-colors"
-                >
-                  Own It — {formatPrice(film.purchasePrice)}
+
+                <a href={HOTC_URL} className="group block border border-[#c8a84b] bg-[#c8a84b]/5 hover:bg-[#c8a84b]/15 transition-all p-6 relative">
+                  <div className="absolute top-3 right-3 font-mono text-xs bg-[#c8a84b] text-black px-2 py-0.5 uppercase tracking-widest">Best Value</div>
+                  <div className="font-mono text-xs text-[#666] uppercase tracking-widest mb-3">Own It</div>
+                  <div className="text-5xl font-black text-[#c8a84b] mb-3">{formatPrice(film.purchasePrice)}</div>
+                  <ul className="space-y-2">
+                    <li className="flex items-center gap-2 text-sm text-[#aaa]">
+                      <span className="text-[#c8a84b]">✓</span> Permanent streaming access
+                    </li>
+                    <li className="flex items-center gap-2 text-sm text-[#aaa]">
+                      <span className="text-[#c8a84b]">✓</span> Watch anytime, forever
+                    </li>
+                    <li className="flex items-center gap-2 text-sm text-[#aaa]">
+                      <span className="text-[#c8a84b]">✓</span> Link emailed instantly
+                    </li>
+                  </ul>
+                  <div className="mt-5 text-xs font-bold uppercase tracking-widest text-[#c8a84b] group-hover:underline">
+                    Own It Now →
+                  </div>
                 </a>
               </div>
 
               <p className="font-mono text-xs text-[#444] uppercase tracking-widest">
-                Streaming via TrueFoundMovies.com · 48-hr rental or permanent access
+                Secure checkout via Stripe · Streaming on TrueFoundMovies.com
               </p>
             </>
           )}
