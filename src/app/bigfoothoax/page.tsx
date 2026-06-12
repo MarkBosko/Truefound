@@ -75,17 +75,17 @@ export default async function BigfootHoaxPage() {
               <span>⚠</span> Suppressed · 2012 · Now Available
             </div>
 
-            <h1 className="text-5xl lg:text-7xl font-black uppercase tracking-tight text-white mb-6 leading-[0.9]">
+            <h1 className="text-6xl lg:text-8xl font-black uppercase tracking-tight text-white mb-6 leading-[0.9]">
               They Said It<br />
               Was New.<br />
               <span className="text-[#c8a84b]">It Wasn&apos;t.</span>
             </h1>
 
-            <p className="text-base text-[#999] leading-relaxed mb-6 max-w-xl">
+            <p className="text-lg text-[#999] leading-relaxed mb-6 max-w-xl">
               When <em>Capturing Bigfoot</em> premiered at SXSW in March 2026, the world
               called it groundbreaking. The definitive proof. The smoking gun.
             </p>
-            <p className="text-base text-white font-bold leading-relaxed mb-6 max-w-xl">
+            <p className="text-lg text-white font-bold leading-relaxed mb-6 max-w-xl">
               Tom Biscardi proved all of it — 14 years earlier. And they came after
               his family for it.
             </p>
@@ -142,10 +142,10 @@ export default async function BigfootHoaxPage() {
           <div className="font-mono text-xs text-[#c8a84b] uppercase tracking-[0.4em] mb-3">
             File No. 001 — Context
           </div>
-          <h2 className="text-3xl font-black uppercase tracking-tight text-white mb-6">
+          <h2 className="text-4xl font-black uppercase tracking-tight text-white mb-6">
             The Films That Defined History
           </h2>
-          <p className="text-[#999] leading-relaxed mb-12 text-base">
+          <p className="text-[#999] leading-relaxed mb-12 text-lg">
             A small number of film clips have been burned into the world&apos;s collective
             consciousness. Lasting only seconds on screen but a lifetime in our minds,
             these snippets of footage capture once-in-a-lifetime events — viewed
@@ -197,11 +197,11 @@ export default async function BigfootHoaxPage() {
           <div className="font-mono text-xs text-[#c8a84b] uppercase tracking-[0.4em] mb-3">
             File No. 002 — The Proof
           </div>
-          <h2 className="text-3xl font-black uppercase tracking-tight text-white mb-10">
+          <h2 className="text-4xl font-black uppercase tracking-tight text-white mb-10">
             What Hoax of the Century Documents
           </h2>
 
-          <div className="space-y-6 text-[#999] leading-relaxed text-base">
+          <div className="space-y-6 text-[#999] leading-relaxed text-lg">
             <p>
               Renowned Bigfoot researcher Tom Biscardi went beyond theory. He sat down
               with the people directly connected to the 1967 Patterson–Gimlin filming —
@@ -228,7 +228,7 @@ export default async function BigfootHoaxPage() {
                 <div className="font-mono text-xs text-[#c8a84b] uppercase tracking-widest mb-3">
                   {item.label}
                 </div>
-                <p className="text-[#aaa] text-sm leading-relaxed">{item.text}</p>
+                <p className="text-[#aaa] text-base leading-relaxed">{item.text}</p>
               </div>
             ))}
           </div>
@@ -251,11 +251,11 @@ export default async function BigfootHoaxPage() {
           <div className="font-mono text-xs text-[#ff4444] uppercase tracking-[0.4em] mb-3">
             File No. 003 — The 2026 Conspiracy
           </div>
-          <h2 className="text-3xl font-black uppercase tracking-tight text-white mb-10">
+          <h2 className="text-4xl font-black uppercase tracking-tight text-white mb-10">
             Capturing Bigfoot:<br />SXSW, Suppression, and a Story Already Told
           </h2>
 
-          <div className="space-y-5 text-[#999] leading-relaxed text-base">
+          <div className="space-y-5 text-[#999] leading-relaxed text-lg">
             <p>
               In March 2026, <em>Capturing Bigfoot</em> — directed by Marq Evans —
               premiered at the SXSW Film Festival to international headlines. The film
@@ -301,7 +301,7 @@ export default async function BigfootHoaxPage() {
           <div className="font-mono text-xs text-[#c8a84b] uppercase tracking-[0.4em] mb-3">
             Timeline of Suppression
           </div>
-          <h2 className="text-3xl font-black uppercase tracking-tight text-white mb-14">
+          <h2 className="text-4xl font-black uppercase tracking-tight text-white mb-14">
             The Record
           </h2>
 
@@ -345,7 +345,7 @@ export default async function BigfootHoaxPage() {
                     {item.year}
                   </div>
                   <p
-                    className={`text-sm leading-relaxed ${
+                    className={`text-base leading-relaxed ${
                       item.highlight ? "text-white font-bold" : "text-[#777]"
                     }`}
                   >
@@ -364,7 +364,7 @@ export default async function BigfootHoaxPage() {
           <div className="font-mono text-xs text-[#c8a84b] uppercase tracking-[0.4em] mb-3">
             See the Evidence
           </div>
-          <h2 className="text-3xl font-black uppercase tracking-tight text-white mb-4">
+          <h2 className="text-4xl font-black uppercase tracking-tight text-white mb-4">
             Hoax of the Century
           </h2>
           <p className="font-mono text-xs text-[#555] uppercase tracking-widest mb-10">
@@ -381,7 +381,7 @@ export default async function BigfootHoaxPage() {
 
           {film && (
             <>
-              <p className="text-[#999] leading-relaxed text-base mb-12 max-w-2xl">
+              <p className="text-[#999] leading-relaxed text-lg mb-12 max-w-2xl">
                 {film.description}
               </p>
 
