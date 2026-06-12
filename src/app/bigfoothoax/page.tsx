@@ -182,7 +182,23 @@ export default async function BigfootHoaxPage() {
             ))}
           </div>
 
-          <div className="mt-8 border-l-2 border-[#c8a84b] pl-6">
+          {/* The iconic frame */}
+          <div className="mt-10 mb-8 relative">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="https://res.cloudinary.com/dm7ckxbgc/image/upload/w_900,q_auto/v1781286764/Patterson_Gimlin_Bigfoot_j0eqir.jpg"
+              alt="The Patterson-Gimlin film, 1967"
+              className="w-full"
+              style={{ filter: "sepia(30%) contrast(1.1) brightness(0.8)", border: "1px solid rgba(200,168,75,0.15)" }}
+            />
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent px-4 py-4">
+              <p className="font-mono text-xs text-[#c8a84b] uppercase tracking-widest">
+                The Patterson–Gimlin Film · Bluff Creek, CA · October 20, 1967
+              </p>
+            </div>
+          </div>
+
+          <div className="border-l-2 border-[#c8a84b] pl-6">
             <p className="text-white font-bold text-lg leading-relaxed">
               Until now. The Patterson–Gimlin Bigfoot film has been conclusively
               exposed as a hoax — for the first time, on camera, by the people who
