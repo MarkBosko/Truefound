@@ -124,6 +124,16 @@ export default async function BigfootHoaxPage() {
             </div>
           )}
         </div>
+
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10">
+          <span className="font-mono text-xs text-[#555] uppercase tracking-[0.4em]">Scroll</span>
+          <div className="animate-bounce text-[#c8a84b]">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+              <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+            </svg>
+          </div>
+        </div>
       </section>
 
       {/* Iconic Footage section */}
