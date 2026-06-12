@@ -85,10 +85,11 @@ export default async function BigfootHoaxPage() {
               When <em>Capturing Bigfoot</em> premiered at SXSW in March 2026, the world
               called it groundbreaking. The definitive proof. The smoking gun.
             </p>
-            <p className="text-lg text-white font-bold leading-relaxed mb-6 max-w-xl">
-              Tom Biscardi proved all of it — 14 years earlier. And they came after
-              his family for it.
-            </p>
+            <div className="border-l-4 border-[#c8a84b] pl-5 mb-6 max-w-xl">
+              <p className="text-2xl text-white font-black leading-snug">
+                Tom Biscardi proved all of it — 14 years earlier. And they came after his family for it.
+              </p>
+            </div>
             <p className="font-mono text-sm text-[#555] uppercase tracking-widest mb-12">
               The film they tried to bury is finally available to watch.
             </p>
