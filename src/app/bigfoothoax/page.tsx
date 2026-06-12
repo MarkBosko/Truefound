@@ -202,15 +202,27 @@ export default async function BigfootHoaxPage() {
             What Hoax of the Century Documents
           </h2>
 
-          <div className="space-y-6 text-[#999] leading-relaxed text-lg">
-            <p>
+          <div className="flex flex-col sm:flex-row gap-10 items-start mt-2 mb-10">
+            <p className="text-[#999] leading-relaxed text-lg flex-1">
               Renowned Bigfoot researcher Tom Biscardi went beyond theory. He sat down
               with the people directly connected to the 1967 Patterson–Gimlin filming —
               and captured their accounts on camera.
             </p>
+            <div className="flex-shrink-0 sm:w-48">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="https://res.cloudinary.com/dm7ckxbgc/image/upload/w_400,e_upscale,q_auto/v1781286772/166625683_1467958450_mqzsjy.jpg"
+                alt="Archival Bigfoot evidence photo"
+                className="w-full grayscale contrast-110 opacity-80"
+                style={{ border: "1px solid rgba(200,168,75,0.15)", filter: "grayscale(100%) contrast(1.1) brightness(0.85)" }}
+              />
+              <p className="font-mono text-xs text-[#444] uppercase tracking-widest mt-2 text-center">
+                Archival evidence
+              </p>
+            </div>
           </div>
 
-          <div className="mt-10 space-y-6">
+          <div className="space-y-6">
             {[
               {
                 label: "The Man in the Suit",
