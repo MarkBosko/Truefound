@@ -1,7 +1,7 @@
 import { prisma } from "@/lib/db"
 import { formatPrice } from "@/lib/stripe"
 
-export const revalidate = 3600
+export const revalidate = 60
 
 export const metadata = {
   title: "The Bigfoot Hoax — The Truth They Tried to Bury",
