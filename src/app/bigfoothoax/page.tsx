@@ -76,11 +76,20 @@ export default async function BigfootHoaxPage() {
               <span>⚠</span> Suppressed · 2012 · Now Available
             </div>
 
-            <h1 className="text-6xl lg:text-8xl font-black uppercase tracking-tight text-white mb-6 leading-[0.9]">
-              They Said It<br />
-              Was New.<br />
-              <span className="text-[#c8a84b]">It Wasn&apos;t.</span>
-            </h1>
+            <div className="relative mb-6">
+              <h1 className="text-6xl lg:text-8xl font-black uppercase tracking-tight text-white leading-[0.9]">
+                They Said It<br />
+                Was New.<br />
+                <span className="text-[#c8a84b]">It Wasn&apos;t.</span>
+              </h1>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="https://res.cloudinary.com/dm7ckxbgc/image/upload/w_200,q_auto/v1781366367/3E38BHH_meyrf3.jpg"
+                alt=""
+                aria-hidden="true"
+                className="absolute right-0 top-[54px] lg:top-[86px] w-16 lg:w-20 opacity-[0.18]"
+              />
+            </div>
 
             <p className="text-lg text-[#999] leading-relaxed mb-6 max-w-xl">
               When <em>Capturing Bigfoot</em> premiered at SXSW in March 2026, the world
