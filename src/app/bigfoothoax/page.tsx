@@ -428,7 +428,7 @@ export default async function BigfootHoaxPage() {
                 ))}
                 <div className="pt-4 border-t border-[#1e1e18]">
                   <div className="inline-flex items-center gap-2 border border-[#c8a84b]/50 bg-[#c8a84b]/10 text-[#c8a84b] font-mono text-xs uppercase tracking-widest px-3 py-2">
-                    <span>▶</span> Streaming now on TrueFoundMovies.com
+                    <span>▶</span> Stream It Now
                   </div>
                 </div>
               </div>
