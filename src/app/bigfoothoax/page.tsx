@@ -82,7 +82,7 @@ export default async function BigfootHoaxPage() {
                 Was New.<br />
                 <span className="text-[#c8a84b]">It Wasn&apos;t.</span>
               </h1>
-              <div className="absolute right-0 top-[76px] lg:top-[136px] w-20 lg:w-24">
+              <div className="absolute right-0 top-[58px] lg:top-[116px] w-20 lg:w-24">
                 <div className="relative">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
