@@ -163,6 +163,117 @@ export default async function BigfootHoaxPage() {
         </div>
       </section>
 
+      {/* Comparison: Capturing Bigfoot vs Hoax of the Century */}
+      <section className="border-t border-[#141410] bg-[#080808] px-6 py-24">
+        <div className="max-w-5xl mx-auto">
+          <div className="font-mono text-xs text-[#ff4444] uppercase tracking-[0.4em] mb-3">
+            File No. 004 — The Comparison
+          </div>
+          <h2 className="text-4xl font-black uppercase tracking-tight text-white mb-4">
+            Two Films. One Story.<br />
+            <span className="text-[#c8a84b]">Only One You Can Watch.</span>
+          </h2>
+          <p className="text-[#777] text-lg leading-relaxed mb-14 max-w-2xl">
+            The <em>Wall Street Journal</em> called the Bigfoot phenomenon a &ldquo;prequel to the confusion
+            that has engulfed our era.&rdquo; Here is a guide to that confusion.
+          </p>
+
+          {/* Side-by-side comparison */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-0 border border-[#1e1e18]">
+
+            {/* Capturing Bigfoot column */}
+            <div className="border-b sm:border-b-0 sm:border-r border-[#1e1e18]">
+              <div className="px-6 py-4 border-b border-[#1e1e18] bg-[#100a0a]">
+                <div className="font-mono text-xs text-[#ff4444] uppercase tracking-[0.4em] mb-1">2026</div>
+                <div className="text-lg font-black text-white uppercase tracking-tight">Capturing Bigfoot</div>
+                <div className="font-mono text-xs text-[#444] uppercase tracking-widest mt-1">Dir. Marq Evans</div>
+              </div>
+              <div className="px-6 py-8 bg-[#0c0a0a] space-y-5">
+                {[
+                  { icon: "✓", label: "Premiered at SXSW", color: "#555" },
+                  { icon: "✓", label: "Newly discovered rehearsal footage", color: "#555" },
+                  { icon: "✓", label: "Bob Heironimus (the man in the suit)", color: "#555" },
+                  { icon: "✓", label: "Clint Patterson (Roger's son)", color: "#555" },
+                  { icon: "✗", label: "Philip Morris (the suit maker)", color: "#441111" },
+                  { icon: "✗", label: "Vilma Radford (the investor)", color: "#441111" },
+                  { icon: "✗", label: "Greg Long (author, financial motives)", color: "#441111" },
+                  { icon: "✗", label: "14 years of forensic investigation", color: "#441111" },
+                ].map((row, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <span className={`text-sm font-bold mt-0.5 flex-shrink-0 ${row.icon === "✓" ? "text-[#555]" : "text-[#ff4444]"}`}>
+                      {row.icon}
+                    </span>
+                    <span className={`text-sm leading-snug ${row.icon === "✓" ? "text-[#666]" : "text-[#cc3333]"}`}>
+                      {row.label}
+                    </span>
+                  </div>
+                ))}
+                <div className="pt-4 border-t border-[#1e1e18]">
+                  <div className="inline-flex items-center gap-2 border border-[#cc2222]/50 bg-[#cc2222]/10 text-[#ff4444] font-mono text-xs uppercase tracking-widest px-3 py-2">
+                    <span>⚠</span> NOT available to stream anywhere
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Hoax of the Century column */}
+            <div>
+              <div className="px-6 py-4 border-b border-[#1e1e18] bg-[#0a0e08]">
+                <div className="font-mono text-xs text-[#c8a84b] uppercase tracking-[0.4em] mb-1">2012 · Suppressed. Now Available.</div>
+                <div className="text-lg font-black text-white uppercase tracking-tight">Hoax of the Century</div>
+                <div className="font-mono text-xs text-[#444] uppercase tracking-widest mt-1">Dir. Tom Biscardi</div>
+              </div>
+              <div className="px-6 py-8 bg-[#0a0c08] space-y-5">
+                {[
+                  { icon: "✓", label: "Released in 2012 — before the headlines", color: "#c8a84b" },
+                  { icon: "✓", label: "On-camera rehearsal and testimony", color: "#c8a84b" },
+                  { icon: "✓", label: "Bob Heironimus on record", color: "#c8a84b" },
+                  { icon: "✓", label: "Philip Morris — explains exactly how the suit was modified to deceive the world", color: "#c8a84b" },
+                  { icon: "✓", label: "Vilma Radford — the investor who financed the expeditions and the PG film itself", color: "#c8a84b" },
+                  { icon: "✓", label: "Greg Long — author of The Making of Bigfoot, financial motives exposed", color: "#c8a84b" },
+                  { icon: "✓", label: "Decisive evidence: a \"money train\" running for nearly five decades", color: "#c8a84b" },
+                  { icon: "✓", label: "Tom Biscardi's family was threatened. Film suppressed for 12 years.", color: "#c8a84b" },
+                ].map((row, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <span className="text-[#c8a84b] text-sm font-bold mt-0.5 flex-shrink-0">✓</span>
+                    <span className="text-sm text-[#aaa] leading-snug">{row.label}</span>
+                  </div>
+                ))}
+                <div className="pt-4 border-t border-[#1e1e18]">
+                  <div className="inline-flex items-center gap-2 border border-[#c8a84b]/50 bg-[#c8a84b]/10 text-[#c8a84b] font-mono text-xs uppercase tracking-widest px-3 py-2">
+                    <span>▶</span> Stream It Now
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Quote from Biscardi */}
+          <div className="mt-12 border-l-4 border-[#c8a84b] pl-6">
+            <blockquote className="text-white text-xl font-bold leading-relaxed mb-3">
+              &ldquo;We didn&apos;t just find a tape. We found the people. We have the man who wore the suit, the man
+              who sold the suit, and the researchers who spent decades deconstructing the lies.&rdquo;
+            </blockquote>
+            <cite className="font-mono text-xs text-[#555] uppercase tracking-widest not-italic">
+              — Tom Biscardi, CEO, Searching for Bigfoot, Inc.
+            </cite>
+          </div>
+
+          {film && (
+            <div className="flex gap-4 flex-wrap mt-12">
+              <a href={HOTC_URL} className="bg-[#c8a84b] text-black px-8 py-4 hover:bg-[#dbb85a] transition-colors text-center">
+                <div className="font-mono text-xs uppercase tracking-widest mb-0.5">Rent</div>
+                <div className="text-2xl font-black">{formatPrice(film.rentalPrice)}</div>
+              </a>
+              <a href={HOTC_URL} className="border border-[#c8a84b] text-[#c8a84b] px-8 py-4 hover:bg-[#c8a84b] hover:text-black transition-colors text-center">
+                <div className="font-mono text-xs uppercase tracking-widest mb-0.5">Own It</div>
+                <div className="text-2xl font-black">{formatPrice(film.purchasePrice)}</div>
+              </a>
+            </div>
+          )}
+        </div>
+      </section>
+
       {/* Iconic Footage section */}
       <section className="border-t border-[#141410] bg-[#0c0c08] px-6 py-24">
         <div className="max-w-3xl mx-auto">
@@ -347,117 +458,6 @@ export default async function BigfootHoaxPage() {
               Until now.
             </p>
           </div>
-        </div>
-      </section>
-
-      {/* Comparison: Capturing Bigfoot vs Hoax of the Century */}
-      <section className="border-t border-[#141410] bg-[#080808] px-6 py-24">
-        <div className="max-w-5xl mx-auto">
-          <div className="font-mono text-xs text-[#ff4444] uppercase tracking-[0.4em] mb-3">
-            File No. 004 — The Comparison
-          </div>
-          <h2 className="text-4xl font-black uppercase tracking-tight text-white mb-4">
-            Two Films. One Story.<br />
-            <span className="text-[#c8a84b]">Only One You Can Watch.</span>
-          </h2>
-          <p className="text-[#777] text-lg leading-relaxed mb-14 max-w-2xl">
-            The <em>Wall Street Journal</em> called the Bigfoot phenomenon a &ldquo;prequel to the confusion
-            that has engulfed our era.&rdquo; Here is a guide to that confusion.
-          </p>
-
-          {/* Side-by-side comparison */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-0 border border-[#1e1e18]">
-
-            {/* Capturing Bigfoot column */}
-            <div className="border-b sm:border-b-0 sm:border-r border-[#1e1e18]">
-              <div className="px-6 py-4 border-b border-[#1e1e18] bg-[#100a0a]">
-                <div className="font-mono text-xs text-[#ff4444] uppercase tracking-[0.4em] mb-1">2026</div>
-                <div className="text-lg font-black text-white uppercase tracking-tight">Capturing Bigfoot</div>
-                <div className="font-mono text-xs text-[#444] uppercase tracking-widest mt-1">Dir. Marq Evans</div>
-              </div>
-              <div className="px-6 py-8 bg-[#0c0a0a] space-y-5">
-                {[
-                  { icon: "✓", label: "Premiered at SXSW", color: "#555" },
-                  { icon: "✓", label: "Newly discovered rehearsal footage", color: "#555" },
-                  { icon: "✓", label: "Bob Heironimus (the man in the suit)", color: "#555" },
-                  { icon: "✓", label: "Clint Patterson (Roger's son)", color: "#555" },
-                  { icon: "✗", label: "Philip Morris (the suit maker)", color: "#441111" },
-                  { icon: "✗", label: "Vilma Radford (the investor)", color: "#441111" },
-                  { icon: "✗", label: "Greg Long (author, financial motives)", color: "#441111" },
-                  { icon: "✗", label: "14 years of forensic investigation", color: "#441111" },
-                ].map((row, i) => (
-                  <div key={i} className="flex items-start gap-3">
-                    <span className={`text-sm font-bold mt-0.5 flex-shrink-0 ${row.icon === "✓" ? "text-[#555]" : "text-[#ff4444]"}`}>
-                      {row.icon}
-                    </span>
-                    <span className={`text-sm leading-snug ${row.icon === "✓" ? "text-[#666]" : "text-[#cc3333]"}`}>
-                      {row.label}
-                    </span>
-                  </div>
-                ))}
-                <div className="pt-4 border-t border-[#1e1e18]">
-                  <div className="inline-flex items-center gap-2 border border-[#cc2222]/50 bg-[#cc2222]/10 text-[#ff4444] font-mono text-xs uppercase tracking-widest px-3 py-2">
-                    <span>⚠</span> NOT available to stream anywhere
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Hoax of the Century column */}
-            <div>
-              <div className="px-6 py-4 border-b border-[#1e1e18] bg-[#0a0e08]">
-                <div className="font-mono text-xs text-[#c8a84b] uppercase tracking-[0.4em] mb-1">2012 · Suppressed. Now Available.</div>
-                <div className="text-lg font-black text-white uppercase tracking-tight">Hoax of the Century</div>
-                <div className="font-mono text-xs text-[#444] uppercase tracking-widest mt-1">Dir. Tom Biscardi</div>
-              </div>
-              <div className="px-6 py-8 bg-[#0a0c08] space-y-5">
-                {[
-                  { icon: "✓", label: "Released in 2012 — before the headlines", color: "#c8a84b" },
-                  { icon: "✓", label: "On-camera rehearsal and testimony", color: "#c8a84b" },
-                  { icon: "✓", label: "Bob Heironimus on record", color: "#c8a84b" },
-                  { icon: "✓", label: "Philip Morris — explains exactly how the suit was modified to deceive the world", color: "#c8a84b" },
-                  { icon: "✓", label: "Vilma Radford — the investor who financed the expeditions and the PG film itself", color: "#c8a84b" },
-                  { icon: "✓", label: "Greg Long — author of The Making of Bigfoot, financial motives exposed", color: "#c8a84b" },
-                  { icon: "✓", label: "Decisive evidence: a \"money train\" running for nearly five decades", color: "#c8a84b" },
-                  { icon: "✓", label: "Tom Biscardi's family was threatened. Film suppressed for 12 years.", color: "#c8a84b" },
-                ].map((row, i) => (
-                  <div key={i} className="flex items-start gap-3">
-                    <span className="text-[#c8a84b] text-sm font-bold mt-0.5 flex-shrink-0">✓</span>
-                    <span className="text-sm text-[#aaa] leading-snug">{row.label}</span>
-                  </div>
-                ))}
-                <div className="pt-4 border-t border-[#1e1e18]">
-                  <div className="inline-flex items-center gap-2 border border-[#c8a84b]/50 bg-[#c8a84b]/10 text-[#c8a84b] font-mono text-xs uppercase tracking-widest px-3 py-2">
-                    <span>▶</span> Stream It Now
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Quote from Biscardi */}
-          <div className="mt-12 border-l-4 border-[#c8a84b] pl-6">
-            <blockquote className="text-white text-xl font-bold leading-relaxed mb-3">
-              &ldquo;We didn&apos;t just find a tape. We found the people. We have the man who wore the suit, the man
-              who sold the suit, and the researchers who spent decades deconstructing the lies.&rdquo;
-            </blockquote>
-            <cite className="font-mono text-xs text-[#555] uppercase tracking-widest not-italic">
-              — Tom Biscardi, CEO, Searching for Bigfoot, Inc.
-            </cite>
-          </div>
-
-          {film && (
-            <div className="flex gap-4 flex-wrap mt-12">
-              <a href={HOTC_URL} className="bg-[#c8a84b] text-black px-8 py-4 hover:bg-[#dbb85a] transition-colors text-center">
-                <div className="font-mono text-xs uppercase tracking-widest mb-0.5">Rent</div>
-                <div className="text-2xl font-black">{formatPrice(film.rentalPrice)}</div>
-              </a>
-              <a href={HOTC_URL} className="border border-[#c8a84b] text-[#c8a84b] px-8 py-4 hover:bg-[#c8a84b] hover:text-black transition-colors text-center">
-                <div className="font-mono text-xs uppercase tracking-widest mb-0.5">Own It</div>
-                <div className="text-2xl font-black">{formatPrice(film.purchasePrice)}</div>
-              </a>
-            </div>
-          )}
         </div>
       </section>
 
