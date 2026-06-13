@@ -194,9 +194,9 @@ export default async function BigfootHoaxPage() {
                   { icon: "✓", label: "Newly discovered rehearsal footage", color: "#555" },
                   { icon: "✓", label: "Bob Heironimus (the man in the suit)", color: "#555" },
                   { icon: "✓", label: "Clint Patterson (Roger's son)", color: "#555" },
+                  { icon: "✓", label: "Greg Long (author, financial motives)", color: "#555" },
                   { icon: "✗", label: "Philip Morris (the suit maker)", color: "#441111" },
                   { icon: "✗", label: "Vilma Radford (the investor)", color: "#441111" },
-                  { icon: "✗", label: "Greg Long (author, financial motives)", color: "#441111" },
                   { icon: "✗", label: "14 years of forensic investigation", color: "#441111" },
                 ].map((row, i) => (
                   <div key={i} className="flex items-start gap-3">
@@ -240,9 +240,9 @@ export default async function BigfootHoaxPage() {
                   </div>
                 ))}
                 <div className="pt-4 border-t border-[#1e1e18]">
-                  <div className="inline-flex items-center gap-2 border border-[#c8a84b]/50 bg-[#c8a84b]/10 text-[#c8a84b] font-mono text-xs uppercase tracking-widest px-3 py-2">
+                  <a href={HOTC_URL} className="inline-flex items-center gap-2 border border-[#c8a84b]/50 bg-[#c8a84b]/10 text-[#c8a84b] font-mono text-xs uppercase tracking-widest px-3 py-2 hover:bg-[#c8a84b]/20 transition-colors">
                     <span>▶</span> Stream It Now
-                  </div>
+                  </a>
                 </div>
               </div>
             </div>
