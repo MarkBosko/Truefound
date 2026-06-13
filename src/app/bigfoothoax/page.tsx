@@ -82,13 +82,26 @@ export default async function BigfootHoaxPage() {
                 Was New.<br />
                 <span className="text-[#c8a84b]">It Wasn&apos;t.</span>
               </h1>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="https://res.cloudinary.com/dm7ckxbgc/image/upload/w_200,q_auto/v1781366367/3E38BHH_meyrf3.jpg"
-                alt=""
-                aria-hidden="true"
-                className="absolute right-0 top-[54px] lg:top-[86px] w-16 lg:w-20 opacity-[0.18]"
-              />
+              <div className="absolute right-0 top-[108px] lg:top-[172px] w-20 lg:w-24">
+                <div className="relative">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="https://res.cloudinary.com/dm7ckxbgc/image/upload/w_200,q_auto/v1781366367/3E38BHH_meyrf3.jpg"
+                    alt=""
+                    aria-hidden="true"
+                    className="w-full block"
+                  />
+                  <svg
+                    className="absolute inset-0 w-full h-full"
+                    viewBox="0 0 100 100"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <circle cx="50" cy="50" r="46" fill="none" stroke="#cc0000" strokeWidth="6"/>
+                    <line x1="18" y1="18" x2="82" y2="82" stroke="#cc0000" strokeWidth="6"/>
+                  </svg>
+                </div>
+              </div>
             </div>
 
             <p className="text-lg text-[#999] leading-relaxed mb-6 max-w-xl">
