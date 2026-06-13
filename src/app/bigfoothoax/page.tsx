@@ -226,7 +226,7 @@ export default async function BigfootHoaxPage() {
               <div className="px-6 py-8 bg-[#0a0c08] space-y-5">
                 {[
                   { icon: "✓", label: "Released in 2012 — before the headlines", color: "#c8a84b" },
-                  { icon: "✓", label: "On-camera rehearsal and testimony", color: "#c8a84b" },
+                  { icon: "✓", label: "On-camera testimony by ALL key players", color: "#c8a84b" },
                   { icon: "✓", label: "Bob Heironimus on record", color: "#c8a84b" },
                   { icon: "✓", label: "Philip Morris — explains exactly how the suit was modified to deceive the world", color: "#c8a84b" },
                   { icon: "✓", label: "Vilma Radford — the investor who financed the expeditions and the PG film itself", color: "#c8a84b" },
