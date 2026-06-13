@@ -230,6 +230,14 @@ export default async function BigfootHoaxPage() {
                     </span>
                   </div>
                 ))}
+                <div className="flex justify-center pt-2 pb-2">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="https://res.cloudinary.com/dm7ckxbgc/image/upload/w_300,q_auto/v1781366367/3E38BHH_meyrf3.jpg"
+                    alt="Capturing Bigfoot poster"
+                    className="w-28 grayscale opacity-50"
+                  />
+                </div>
                 <div className="pt-4 border-t border-[#1e1e18]">
                   <div className="inline-flex items-center gap-2 border border-[#cc2222]/50 bg-[#cc2222]/10 text-[#ff4444] font-mono text-xs uppercase tracking-widest px-3 py-2">
                     <span>⚠</span> NOT available to stream anywhere
@@ -261,6 +269,17 @@ export default async function BigfootHoaxPage() {
                     <span className="text-sm text-[#aaa] leading-snug">{row.label}</span>
                   </div>
                 ))}
+                {film?.posterUrl && (
+                  <div className="flex justify-center pt-2 pb-2">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={film.posterUrl}
+                      alt="Hoax of the Century poster"
+                      className="w-28"
+                      style={{ border: "1px solid rgba(200,168,75,0.35)", boxShadow: "0 0 24px rgba(200,168,75,0.12)" }}
+                    />
+                  </div>
+                )}
                 <div className="pt-4 border-t border-[#1e1e18]">
                   <a href={HOTC_URL} className="inline-flex items-center gap-2 border border-[#c8a84b]/50 bg-[#c8a84b]/10 text-[#c8a84b] font-mono text-xs uppercase tracking-widest px-3 py-2 hover:bg-[#c8a84b]/20 transition-colors">
                     <span>▶</span> Stream It Now
