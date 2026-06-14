@@ -487,7 +487,7 @@ export default async function BigfootHoaxPage() {
             </div>
 
             <p>
-              <em>Capturing Bigfoot</em> was subsequently pulled from the Overlook Film
+              <em>Capturing Bigfoot</em>{" "}was subsequently pulled from the Overlook Film
               Festival. Producers cited concerns about piracy — specifically, the risk
               of the film&apos;s unreleased test footage being covertly recorded and
               leaked online.
