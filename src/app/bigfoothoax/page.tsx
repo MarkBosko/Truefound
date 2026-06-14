@@ -262,7 +262,7 @@ export default async function BigfootHoaxPage() {
                   { icon: "✓", label: "Vilma Radford — the investor who financed the expeditions and the PG film itself", color: "#c8a84b" },
                   { icon: "✓", label: "Greg Long — author of The Making of Bigfoot, financial motives exposed", color: "#c8a84b" },
                   { icon: "✓", label: "Decisive evidence: a \"money train\" running for nearly five decades", color: "#c8a84b" },
-                  { icon: "✓", label: "Tom Biscardi's family was threatened. Film suppressed for 12 years.", color: "#c8a84b" },
+                  { icon: "✓", label: "Tom Biscardi's family was threatened. Film suppressed for 14 years.", color: "#c8a84b" },
                 ].map((row, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <span className="text-[#c8a84b] text-sm font-bold mt-0.5 flex-shrink-0">✓</span>
