@@ -546,14 +546,14 @@ export default async function BigfootHoaxPage() {
                 <div className="pb-10">
                   <div
                     className={`font-mono text-xs font-bold mb-2 uppercase tracking-widest ${
-                      item.highlight ? "text-[#c8a84b]" : "text-[#555]"
+                      item.highlight ? "text-[#c8a84b]" : "text-white"
                     }`}
                   >
                     {item.year}
                   </div>
                   <p
                     className={`text-base leading-relaxed ${
-                      item.highlight ? "text-white font-bold" : "text-[#777]"
+                      item.highlight ? "text-white font-bold" : "text-white"
                     }`}
                   >
                     {item.text}
