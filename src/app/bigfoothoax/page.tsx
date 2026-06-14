@@ -225,7 +225,7 @@ export default async function BigfootHoaxPage() {
                     <span className={`text-sm font-bold mt-0.5 flex-shrink-0 ${row.icon === "✓" ? "text-[#555]" : "text-[#ff4444]"}`}>
                       {row.icon}
                     </span>
-                    <span className={`text-sm leading-snug ${row.icon === "✓" ? "text-[#666]" : "text-[#cc3333]"}`}>
+                    <span className={`text-sm leading-snug ${row.icon === "✓" ? "text-white" : "text-[#cc3333]"}`}>
                       {row.label}
                     </span>
                   </div>
