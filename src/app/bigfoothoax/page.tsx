@@ -347,13 +347,13 @@ export default async function BigfootHoaxPage() {
                   <span className="font-mono text-xs text-[#444] w-4">{i + 1}</span>
                   <span
                     className={`font-bold text-sm uppercase tracking-wide ${
-                      item.highlight ? "text-[#c8a84b]" : "text-[#888]"
+                      item.highlight ? "text-[#ff4444]" : "text-[#c8a84b]"
                     }`}
                   >
                     {item.label}
                   </span>
                 </div>
-                <span className="font-mono text-xs text-[#555] hidden sm:block">
+                <span className="font-mono text-xs text-white hidden sm:block">
                   {item.note}
                 </span>
               </div>
