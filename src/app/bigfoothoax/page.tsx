@@ -235,7 +235,7 @@ export default async function BigfootHoaxPage() {
                   <img
                     src="https://res.cloudinary.com/dm7ckxbgc/image/upload/w_300,q_auto/v1781366367/3E38BHH_meyrf3.jpg"
                     alt="Capturing Bigfoot poster"
-                    className="w-28 grayscale opacity-50"
+                    className="w-28"
                   />
                 </div>
                 <div className="pt-4 border-t border-[#1e1e18]">
