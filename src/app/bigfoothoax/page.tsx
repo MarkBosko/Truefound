@@ -467,7 +467,7 @@ export default async function BigfootHoaxPage() {
               In March 2026, <em>Capturing Bigfoot</em> — directed by Marq Evans —
               premiered at the SXSW Film Festival to international headlines. The film
               presented what it called definitive proof: a newly discovered canister of
-              16mm film, locked in a safe for over 50 years, showing a man rehearsing in
+              16mm film, locked in a safe for nearly 60 years, showing a man rehearsing in
               the Bigfoot suit before the 1967 shoot. Roger Patterson&apos;s own son,
               Clint Patterson, appears in the film acknowledging the hoax. Bob
               Heironimus — the man in the suit — is central to the story.
