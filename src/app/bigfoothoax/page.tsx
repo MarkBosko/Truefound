@@ -496,7 +496,7 @@ export default async function BigfootHoaxPage() {
             <p>
               Meanwhile, the film that told this story first — with more witnesses, more
               testimony, more history — has been sitting in the dark for over a decade.
-              Until now.
+              Until <a href={HOTC_URL} className="text-[#ff4444] underline font-bold hover:text-[#ff6666] transition-colors">now</a>.
             </p>
           </div>
         </div>
