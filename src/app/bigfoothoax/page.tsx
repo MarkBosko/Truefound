@@ -196,7 +196,7 @@ export default async function BigfootHoaxPage() {
             <span className="text-[#c8a84b]">Only One You Can Watch.</span>
           </h2>
           <p className="text-[#777] text-lg leading-relaxed mb-14 max-w-2xl">
-            The <em>Wall Street Journal</em> called the Bigfoot phenomenon a &ldquo;prequel to the confusion
+            The <em>Wall Street Journal</em>{" "}called the Bigfoot phenomenon a &ldquo;prequel to the confusion
             that has engulfed our era.&rdquo; Here is a guide to that confusion.
           </p>
 
