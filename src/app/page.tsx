@@ -84,19 +84,24 @@ export default async function HomePage() {
           </div>
           <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide -mx-6 px-6">
             {[
-              "https://res.cloudinary.com/dm7ckxbgc/image/upload/w_300,h_450,c_fill,q_auto/v1781806516/ACM_pcimhy.jpg",
-              "https://res.cloudinary.com/dm7ckxbgc/image/upload/w_300,h_450,c_fill,q_auto/v1781806562/the_goocher_yrgn1w.jpg",
-              "https://res.cloudinary.com/dm7ckxbgc/image/upload/w_300,h_450,c_fill,q_auto/v1781806585/woodwitch_wkvfua.jpg",
-              "https://res.cloudinary.com/dm7ckxbgc/image/upload/w_300,h_450,c_fill,q_auto/v1781806736/AREA_51_poster_lnoox6.jpg",
-              "https://res.cloudinary.com/dm7ckxbgc/image/upload/w_300,h_450,c_fill,q_auto/v1781807095/BL2_jb9egc.jpg",
-            ].map((url, i) => (
+              { url: "https://res.cloudinary.com/dm7ckxbgc/image/upload/w_300,h_450,c_fill,q_auto/v1781806516/ACM_pcimhy.jpg", title: "Athens County Massacre" },
+              { url: "https://res.cloudinary.com/dm7ckxbgc/image/upload/w_300,h_450,c_fill,q_auto/v1781806562/the_goocher_yrgn1w.jpg", title: "The Goocher" },
+              { url: "https://res.cloudinary.com/dm7ckxbgc/image/upload/w_300,h_450,c_fill,q_auto/v1781806585/woodwitch_wkvfua.jpg", title: "Wood Witch" },
+              { url: "https://res.cloudinary.com/dm7ckxbgc/image/upload/w_300,h_450,c_fill,q_auto/v1781806736/AREA_51_poster_lnoox6.jpg", title: "Area 51 Confidential" },
+              { url: "https://res.cloudinary.com/dm7ckxbgc/image/upload/w_300,h_450,c_fill,q_auto/v1781807095/BL2_jb9egc.jpg", title: "Bigfoot Lives 2" },
+            ].map((film, i) => (
               <div key={i} className="flex-none w-36 sm:w-44">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={url}
-                  alt="Coming soon"
+                  src={film.url}
+                  alt={film.title}
                   className="w-full aspect-[2/3] object-cover"
                 />
+                <div className="mt-3">
+                  <h3 className="font-bold text-sm tracking-wide uppercase text-white line-clamp-1">
+                    {film.title}
+                  </h3>
+                </div>
               </div>
             ))}
           </div>
