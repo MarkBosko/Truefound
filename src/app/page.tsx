@@ -88,6 +88,7 @@ export default async function HomePage() {
               "https://res.cloudinary.com/dm7ckxbgc/image/upload/w_300,h_450,c_fill,q_auto/v1781806562/the_goocher_yrgn1w.jpg",
               "https://res.cloudinary.com/dm7ckxbgc/image/upload/w_300,h_450,c_fill,q_auto/v1781806585/woodwitch_wkvfua.jpg",
               "https://res.cloudinary.com/dm7ckxbgc/image/upload/w_300,h_450,c_fill,q_auto/v1781806736/AREA_51_poster_lnoox6.jpg",
+              "https://res.cloudinary.com/dm7ckxbgc/image/upload/w_300,h_450,c_fill,q_auto/v1781807095/BL2_jb9egc.jpg",
             ].map((url, i) => (
               <div key={i} className="flex-none w-36 sm:w-44">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
