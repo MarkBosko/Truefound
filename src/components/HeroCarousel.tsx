@@ -90,7 +90,7 @@ export default function HeroCarousel({ films }: { films: Film[] }) {
             href={`/films/${film.slug}`}
             className="font-display bg-white text-black px-8 py-3 text-sm font-bold uppercase tracking-widest hover:bg-[#e0e0e0] transition-colors"
           >
-            View Trailer / Film »
+            Trailer / Rent / Buy »
           </Link>
           <Link
             href="/films"
