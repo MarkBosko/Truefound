@@ -39,6 +39,23 @@ export default async function FilmPage({ params }: Props) {
           />
         </div>
 
+        {/* Quick-access CTA — immediately below trailer */}
+        <div className="bg-[#0d0d0d] border-b border-[#222] px-6 py-4">
+          <div className="max-w-6xl mx-auto flex flex-col sm:flex-row sm:items-center gap-3">
+            <h2 className="text-white font-black uppercase tracking-tight text-sm sm:text-base flex-1">
+              {film.title}
+            </h2>
+            <div className="flex gap-3">
+              <div className="flex-1 sm:flex-none sm:w-40">
+                <PurchaseButtons filmId={film.id} type="RENTAL" label={`Rent · ${formatPrice(film.rentalPrice)}`} />
+              </div>
+              <div className="flex-1 sm:flex-none sm:w-40">
+                <PurchaseButtons filmId={film.id} type="PURCHASE" label={`Buy · ${formatPrice(film.purchasePrice)}`} />
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div className="max-w-6xl mx-auto px-6 py-12 grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Film info */}
           <div className="lg:col-span-2">
