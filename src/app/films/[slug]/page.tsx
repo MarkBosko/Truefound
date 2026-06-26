@@ -32,7 +32,7 @@ export default async function FilmPage({ params }: Props) {
         {/* Trailer */}
         <div className="relative bg-black aspect-video max-h-[60vh] overflow-hidden">
           <iframe
-            src={`https://embed.vhx.tv/videos/${film.vimeoTrailerId}?autoplay=0`}
+            src={`https://embed.vhx.tv/videos/${film.vimeoTrailerId}?autoplay=1&muted=1`}
             className="w-full h-full"
             allow="autoplay; fullscreen; picture-in-picture"
             allowFullScreen
