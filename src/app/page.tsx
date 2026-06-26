@@ -3,6 +3,7 @@ import Header from "@/components/Header"
 import Footer from "@/components/Footer"
 import FilmCard from "@/components/FilmCard"
 import HeroCarousel from "@/components/HeroCarousel"
+import ScrollRow from "@/components/ScrollRow"
 import { prisma } from "@/lib/db"
 
 export const revalidate = 60
@@ -65,16 +66,13 @@ export default async function HomePage() {
                       See All »
                     </Link>
                   </div>
-                  <div className="relative">
-                    <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide -mx-6 px-6">
-                      {cat.films.map((film) => (
-                        <div key={film.id} className="flex-none w-36 sm:w-44">
-                          <FilmCard {...film} />
-                        </div>
-                      ))}
-                    </div>
-                    <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-black to-transparent" />
-                  </div>
+                  <ScrollRow>
+                    {cat.films.map((film) => (
+                      <div key={film.id} className="flex-none w-36 sm:w-44">
+                        <FilmCard {...film} />
+                      </div>
+                    ))}
+                  </ScrollRow>
                 </section>
               ))}
             </div>
@@ -85,8 +83,7 @@ export default async function HomePage() {
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-xs uppercase tracking-[0.3em] text-[#888]">Coming Soon</h2>
           </div>
-          <div className="relative">
-          <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide -mx-6 px-6">
+          <ScrollRow>
             {[
               { url: "https://res.cloudinary.com/dm7ckxbgc/image/upload/w_300,h_450,c_fill,q_auto/v1781806516/ACM_pcimhy.jpg", title: "Athens County Massacre" },
               { url: "https://res.cloudinary.com/dm7ckxbgc/image/upload/w_300,h_450,c_fill,q_auto/v1781806585/woodwitch_wkvfua.jpg", title: "Wood Witch" },
@@ -107,9 +104,7 @@ export default async function HomePage() {
                 </div>
               </div>
             ))}
-          </div>
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-black to-transparent" />
-          </div>
+          </ScrollRow>
         </section>
       </main>
       <Footer />
