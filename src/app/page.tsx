@@ -85,7 +85,6 @@ export default async function HomePage() {
           <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide -mx-6 px-6">
             {[
               { url: "https://res.cloudinary.com/dm7ckxbgc/image/upload/w_300,h_450,c_fill,q_auto/v1781806516/ACM_pcimhy.jpg", title: "Athens County Massacre" },
-              { url: "https://res.cloudinary.com/dm7ckxbgc/image/upload/w_300,h_450,c_fill,q_auto/v1781806562/the_goocher_yrgn1w.jpg", title: "The Goocher" },
               { url: "https://res.cloudinary.com/dm7ckxbgc/image/upload/w_300,h_450,c_fill,q_auto/v1781806585/woodwitch_wkvfua.jpg", title: "Wood Witch" },
               { url: "https://res.cloudinary.com/dm7ckxbgc/image/upload/w_300,h_450,c_fill,q_auto/v1781806736/AREA_51_poster_lnoox6.jpg", title: "Area 51 Confidential" },
               { url: "https://res.cloudinary.com/dm7ckxbgc/image/upload/w_300,h_450,c_fill,q_auto/v1781807095/BL2_jb9egc.jpg", title: "Bigfoot Lives 2" },
