@@ -53,6 +53,9 @@ export default function FilmCard({
         <p className="text-xs text-[#666] mt-0.5">
           {director} · {year} · {CATEGORY_LABELS[category] ?? category}
         </p>
+        <p className="text-xs text-[#888] mt-1">
+          Rent {formatPrice(rentalPrice)} &nbsp;·&nbsp; Own {formatPrice(purchasePrice)}
+        </p>
       </div>
     </Link>
   )
