@@ -17,6 +17,9 @@ const lato = Lato({
 export const metadata: Metadata = {
   title: "TrueFoundMovies - Stream creature, paranormal and alien films",
   description: "TrueFoundMovies is the world's best source to stream creature, paranormal and alien found footage and documentary movies",
+  verification: {
+    google: "25bOt62ZVrbBjlGzhm8R4e5Myq2m6K3oQ2ZcP2SSrUY",
+  },
   openGraph: {
     siteName: "TrueFoundMovies",
     type: "website",
