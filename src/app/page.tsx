@@ -85,7 +85,6 @@ export default async function HomePage() {
           </div>
           <ScrollRow>
             {[
-              { url: "https://res.cloudinary.com/dm7ckxbgc/image/upload/w_300,h_450,c_fill,q_auto/v1781806585/woodwitch_wkvfua.jpg", title: "Wood Witch" },
               { url: "https://res.cloudinary.com/dm7ckxbgc/image/upload/w_300,h_450,c_fill,q_auto/v1781806736/AREA_51_poster_lnoox6.jpg", title: "Area 51 Confidential" },
               { url: "https://res.cloudinary.com/dm7ckxbgc/image/upload/w_300,h_450,c_fill,q_auto/v1781807095/BL2_jb9egc.jpg", title: "Bigfoot Lives 2" },
             ].map((film, i) => (
