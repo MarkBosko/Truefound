@@ -15,10 +15,10 @@ const lato = Lato({
 })
 
 export const metadata: Metadata = {
-  title: "True Found — Independent Films",
-  description: "Stream, rent, or own handpicked independent films.",
+  title: "TrueFoundMovies - Stream creature, paranormal and alien films",
+  description: "TrueFoundMovies is the world's best source to stream creature, paranormal and alien found footage and documentary movies",
   openGraph: {
-    siteName: "True Found",
+    siteName: "TrueFoundMovies",
     type: "website",
   },
 }
