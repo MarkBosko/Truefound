@@ -10,13 +10,41 @@ export const revalidate = 60
 
 type Props = { params: Promise<{ slug: string }> }
 
+const CATEGORY_KEYWORDS: Record<string, string> = {
+  CRYPTIDS:   "bigfoot, cryptid, creature, found footage, monster, documentary",
+  ALIENS:     "alien, UFO, extraterrestrial, found footage, alien encounter, documentary",
+  PARANORMAL: "paranormal, ghost, supernatural, found footage, horror documentary",
+}
+
 export async function generateMetadata({ params }: Props) {
   const { slug } = await params
   const film = await prisma.film.findUnique({ where: { slug, active: true } })
   if (!film) return {}
+
+  const keywords = CATEGORY_KEYWORDS[film.category] ?? "independent film, documentary, found footage"
+  const description = `${film.description} Stream, rent, or own ${film.title} on TrueFoundMovies.`
+
   return {
-    title: `${film.title} — True Found`,
-    description: film.description,
+    title: `${film.title} | Stream on TrueFoundMovies`,
+    description,
+    keywords: `${film.title}, ${keywords}, TrueFoundMovies, stream, rent, watch online`,
+    openGraph: {
+      title: film.title,
+      description,
+      type: "video.movie",
+      url: `https://www.truefoundmovies.com/films/${slug}`,
+      siteName: "TrueFoundMovies",
+      images: film.posterUrl ? [{ url: film.posterUrl, alt: film.title }] : [],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${film.title} | TrueFoundMovies`,
+      description,
+      images: film.posterUrl ? [film.posterUrl] : [],
+    },
+    alternates: {
+      canonical: `https://www.truefoundmovies.com/films/${slug}`,
+    },
   }
 }
 
