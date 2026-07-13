@@ -53,8 +53,40 @@ export default async function FilmPage({ params }: Props) {
   const film = await prisma.film.findUnique({ where: { slug, active: true } })
   if (!film) notFound()
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Movie",
+    name: film.title,
+    description: film.description,
+    director: { "@type": "Person", name: film.director },
+    dateCreated: film.year.toString(),
+    duration: `PT${film.runtime}M`,
+    image: film.posterUrl,
+    url: `https://www.truefoundmovies.com/films/${slug}`,
+    offers: [
+      {
+        "@type": "Offer",
+        name: "Rent",
+        price: (film.rentalPrice / 100).toFixed(2),
+        priceCurrency: "USD",
+        availability: "https://schema.org/InStock",
+      },
+      {
+        "@type": "Offer",
+        name: "Buy",
+        price: (film.purchasePrice / 100).toFixed(2),
+        priceCurrency: "USD",
+        availability: "https://schema.org/InStock",
+      },
+    ],
+  }
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Header />
       <main className="flex-1">
         {/* Trailer */}
