@@ -23,6 +23,9 @@ export default async function HomePage() {
     <>
       <Header />
       <main className="flex-1">
+        <h1 className="sr-only">
+          Stream Bigfoot, Alien and Paranormal Found Footage Films — TrueFoundMovies
+        </h1>
         {/* Hero */}
         {films.length > 0 ? (
           <HeroCarousel films={films} />

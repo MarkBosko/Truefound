@@ -79,9 +79,9 @@ export default function HeroCarousel({ films }: { films: Film[] }) {
         <p className="font-display text-xs text-[#888] uppercase tracking-widest mb-2">
           Now Streaming
         </p>
-        <h1 className="text-4xl sm:text-6xl font-black uppercase tracking-tight text-white max-w-2xl leading-none">
+        <h2 className="text-4xl sm:text-6xl font-black uppercase tracking-tight text-white max-w-2xl leading-none">
           {film.title}
-        </h1>
+        </h2>
         <p className="text-[#aaa] mt-3 max-w-lg text-sm leading-relaxed line-clamp-2">
           {film.description}
         </p>
