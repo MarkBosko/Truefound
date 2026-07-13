@@ -16,6 +16,12 @@ const CATEGORY_KEYWORDS: Record<string, string> = {
   PARANORMAL: "paranormal, ghost, supernatural, found footage, horror documentary",
 }
 
+const CATEGORY_GENRE: Record<string, string> = {
+  CRYPTIDS:   "Documentary, Horror",
+  ALIENS:     "Documentary, Science Fiction",
+  PARANORMAL: "Documentary, Horror",
+}
+
 export async function generateMetadata({ params }: Props) {
   const { slug } = await params
   const film = await prisma.film.findUnique({ where: { slug, active: true } })
@@ -53,7 +59,9 @@ export default async function FilmPage({ params }: Props) {
   const film = await prisma.film.findUnique({ where: { slug, active: true } })
   if (!film) notFound()
 
-  const jsonLd = {
+  const genre = CATEGORY_GENRE[film.category] ?? "Documentary"
+
+  const movieJsonLd = {
     "@context": "https://schema.org",
     "@type": "Movie",
     name: film.title,
@@ -61,8 +69,16 @@ export default async function FilmPage({ params }: Props) {
     director: { "@type": "Person", name: film.director },
     dateCreated: film.year.toString(),
     duration: `PT${film.runtime}M`,
+    genre,
     image: film.posterUrl,
     url: `https://www.truefoundmovies.com/films/${slug}`,
+    trailer: {
+      "@type": "VideoObject",
+      name: `${film.title} — Official Trailer`,
+      embedUrl: `https://embed.vhx.tv/videos/${film.vimeoTrailerId}`,
+      thumbnailUrl: film.posterUrl,
+      description: `Official trailer for ${film.title}`,
+    },
     offers: [
       {
         "@type": "Offer",
@@ -81,11 +97,25 @@ export default async function FilmPage({ params }: Props) {
     ],
   }
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "TrueFoundMovies", item: "https://www.truefoundmovies.com" },
+      { "@type": "ListItem", position: 2, name: "Films", item: "https://www.truefoundmovies.com/films" },
+      { "@type": "ListItem", position: 3, name: film.title, item: `https://www.truefoundmovies.com/films/${slug}` },
+    ],
+  }
+
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(movieJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       <Header />
       <main className="flex-1">

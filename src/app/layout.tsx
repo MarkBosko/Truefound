@@ -31,6 +31,14 @@ export const metadata: Metadata = {
   },
 }
 
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "TrueFoundMovies",
+  url: "https://www.truefoundmovies.com",
+  description: "Stream creature, paranormal and alien found footage and documentary films",
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -39,6 +47,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${oswald.variable} ${lato.variable} h-full`}>
       <body className="min-h-full flex flex-col bg-[#0d0d0d] text-[#f0f0f0]">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
         {children}
       </body>
     </html>
