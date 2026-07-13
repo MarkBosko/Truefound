@@ -17,12 +17,17 @@ const lato = Lato({
 export const metadata: Metadata = {
   title: "TrueFoundMovies - Stream creature, paranormal and alien films",
   description: "TrueFoundMovies is the world's best source to stream creature, paranormal and alien found footage and documentary movies",
+  metadataBase: new URL("https://www.truefoundmovies.com"),
+  alternates: {
+    canonical: "https://www.truefoundmovies.com",
+  },
   verification: {
     google: "25bOt62ZVrbBjlGzhm8R4e5Myq2m6K3oQ2ZcP2SSrUY",
   },
   openGraph: {
     siteName: "TrueFoundMovies",
     type: "website",
+    url: "https://www.truefoundmovies.com",
   },
 }
 
