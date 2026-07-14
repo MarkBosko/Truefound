@@ -75,9 +75,10 @@ export default async function FilmPage({ params }: Props) {
     trailer: {
       "@type": "VideoObject",
       name: `${film.title} — Official Trailer`,
-      embedUrl: `https://embed.vhx.tv/videos/${film.vimeoTrailerId}`,
-      thumbnailUrl: film.posterUrl,
       description: `Official trailer for ${film.title}`,
+      thumbnailUrl: film.posterUrl,
+      embedUrl: `https://embed.vhx.tv/videos/${film.vimeoTrailerId}`,
+      uploadDate: film.createdAt.toISOString(),
     },
     offers: [
       {
