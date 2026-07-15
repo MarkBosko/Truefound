@@ -6,6 +6,16 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "**" },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "truefoundmovies.com" }],
+        destination: "https://www.truefoundmovies.com/:path*",
+        permanent: true,
+      },
+    ]
+  },
   async headers() {
     return [
       {
