@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { Oswald, Lato } from "next/font/google"
+import { GoogleAnalytics } from "@next/third-parties/google"
 import "./globals.css"
 
 const oswald = Oswald({
@@ -52,6 +53,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
         {children}
+        <GoogleAnalytics gaId="G-PCY8GFF20L" />
       </body>
     </html>
   )
