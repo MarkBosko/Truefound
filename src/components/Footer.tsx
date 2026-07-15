@@ -40,8 +40,8 @@ export default function Footer() {
             <div className="flex items-start gap-2.5">
               <USFlag />
               <p className="text-xs text-[#aaa] leading-relaxed">
-                True Found is a U.S. founded and based company that licenses films
-                directly from independent filmmakers.
+                TrueFoundMovies is a U.S.-based streaming platform for creature,
+                paranormal and alien found footage films.
               </p>
             </div>
           </div>
