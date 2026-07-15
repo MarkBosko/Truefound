@@ -6,8 +6,8 @@ import { prisma } from "@/lib/db"
 export const revalidate = 60
 
 export const metadata = {
-  title: "Films — True Found",
-  description: "Browse the full collection of independent films.",
+  title: "All Films | TrueFoundMovies — Stream Bigfoot, Alien & Paranormal Documentaries",
+  description: "Browse the full catalog of creature, paranormal and alien found footage films on TrueFoundMovies. Rent or own instantly.",
 }
 
 const CATEGORIES = [

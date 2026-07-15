@@ -36,7 +36,7 @@ export default async function HomePage() {
                 <span className="font-display text-4xl font-black tracking-widest uppercase">True Found</span>
               </div>
               <p className="text-[#666] text-sm uppercase tracking-widest">
-                Independent films, handpicked.
+                Stream creature, paranormal and alien found footage films.
               </p>
             </div>
           </section>
