@@ -3,6 +3,8 @@
 import { useState } from "react"
 import { useRouter } from "next/navigation"
 
+type Video = { title: string; vhxId: string }
+
 type Film = {
   id?: string
   title?: string
@@ -14,6 +16,7 @@ type Film = {
   runtime?: number
   vimeoTrailerId?: string
   vimeoFilmId?: string
+  videos?: Video[] | null
   posterUrl?: string
   heroImageUrl?: string | null
   rentalPrice?: number
@@ -31,12 +34,26 @@ export default function FilmForm({ film }: { film?: Film }) {
     setError("")
 
     const data = Object.fromEntries(new FormData(e.currentTarget))
+
+    const videosRaw = ((data.videos as string) || "").trim()
+    const videos = videosRaw
+      ? videosRaw
+          .split("\n")
+          .map((l) => l.trim())
+          .filter(Boolean)
+          .map((l) => {
+            const [title, vhxId] = l.split("|").map((s) => s.trim())
+            return { title, vhxId }
+          })
+      : null
+
     const payload = {
       ...data,
       year: Number(data.year),
       runtime: Number(data.runtime),
       rentalPrice: Math.round(Number(data.rentalPrice) * 100),
       purchasePrice: Math.round(Number(data.purchasePrice) * 100),
+      videos,
     }
 
     const url = film?.id ? `/api/admin/films/${film.id}` : "/api/admin/films"
@@ -125,6 +142,23 @@ export default function FilmForm({ film }: { film?: Film }) {
       <div className="grid grid-cols-2 gap-4">
         {field("vimeoTrailerId", "Vimeo Trailer ID", { defaultValue: film?.vimeoTrailerId, placeholder: "e.g. 123456789" })}
         {field("vimeoFilmId", "Vimeo Film ID", { defaultValue: film?.vimeoFilmId, placeholder: "e.g. 987654321" })}
+      </div>
+
+      <div>
+        <label className="text-xs uppercase tracking-widest text-[#aaa] block mb-1">
+          Bundle Videos <span className="normal-case text-[#555]">(optional — one per line: Title | VHX_ID)</span>
+        </label>
+        <textarea
+          name="videos"
+          rows={12}
+          placeholder={"June 9 | 123456\nDirector Commentary | 234567\nAuditions | 345678"}
+          defaultValue={
+            film?.videos
+              ? film.videos.map((v) => `${v.title} | ${v.vhxId}`).join("\n")
+              : ""
+          }
+          className="w-full bg-[#111] border border-[#222] text-white px-4 py-3 text-sm focus:outline-none focus:border-[#555] resize-none font-mono"
+        />
       </div>
 
       <div className="grid grid-cols-2 gap-4">

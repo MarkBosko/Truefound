@@ -15,7 +15,7 @@ async function isValidToken(req: NextRequest): Promise<boolean> {
   }
 }
 
-export async function middleware(req: NextRequest) {
+export async function proxy(req: NextRequest) {
   const hostname = req.headers.get("host") || ""
   const pathname = req.nextUrl.pathname
 
@@ -26,6 +26,15 @@ export async function middleware(req: NextRequest) {
     !pathname.startsWith("/_next")
   ) {
     return NextResponse.rewrite(new URL("/bigfoothoax", req.url))
+  }
+
+  // Route helltownohio.com to the June 9 landing page
+  if (
+    hostname.includes("helltownohio.com") &&
+    !pathname.startsWith("/api") &&
+    !pathname.startsWith("/_next")
+  ) {
+    return NextResponse.rewrite(new URL("/helltownohio", req.url))
   }
 
   // Admin auth guard
@@ -46,5 +55,5 @@ export async function middleware(req: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/((?!_next/static|_next/image|favicon.ico).*)","/admin/:path*"],
+  matcher: ["/((?!_next/static|_next/image|favicon.ico).*)", "/admin/:path*"],
 }

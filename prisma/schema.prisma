@@ -17,6 +17,7 @@ model Film {
   runtime        Int
   vimeoTrailerId String
   vimeoFilmId    String
+  videos         Json?
   posterUrl      String
   heroImageUrl   String?
   category       Category @default(CRYPTIDS)

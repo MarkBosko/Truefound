@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation"
 import { prisma } from "@/lib/db"
 import Header from "@/components/Header"
+import BundlePlayer from "./BundlePlayer"
 
 type Props = { params: Promise<{ token: string }> }
 
@@ -56,11 +57,31 @@ export default async function WatchPage({ params }: Props) {
         })}`
       : "Permanent access"
 
+  // Bundle film: has a videos JSON array
+  const videos = order.film.videos as { title: string; vhxId: string }[] | null
+
+  if (videos && videos.length > 0) {
+    return (
+      <>
+        <Header />
+        <main className="flex-1 flex flex-col">
+          <BundlePlayer
+            videos={videos}
+            filmTitle={order.film.title}
+            director={order.film.director}
+            year={order.film.year}
+            expiryMsg={expiryMsg}
+          />
+        </main>
+      </>
+    )
+  }
+
+  // Single film: existing behavior
   return (
     <>
       <Header />
       <main className="flex-1 flex flex-col">
-        {/* Player */}
         <div className="bg-black flex-1 flex items-center">
           <div className="w-full aspect-video">
             <iframe
@@ -72,7 +93,6 @@ export default async function WatchPage({ params }: Props) {
           </div>
         </div>
 
-        {/* Film info bar */}
         <div className="border-t border-[#222] px-6 py-4 flex items-center justify-between">
           <div>
             <h1 className="text-sm font-bold uppercase tracking-wider">
