@@ -23,6 +23,7 @@ model Film {
   category       Category @default(CRYPTIDS)
   rentalPrice    Int
   purchasePrice  Int
+  sortOrder      Int      @default(0)
   active         Boolean  @default(true)
   createdAt      DateTime @default(now())
   updatedAt      DateTime @updatedAt

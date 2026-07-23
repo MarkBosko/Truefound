@@ -19,7 +19,7 @@ const CATEGORIES = [
 export default async function FilmsPage() {
   const films = await prisma.film.findMany({
     where: { active: true },
-    orderBy: { createdAt: "desc" },
+    orderBy: { sortOrder: "asc" },
   })
 
   const grouped = CATEGORIES.map((cat) => ({

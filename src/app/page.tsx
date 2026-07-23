@@ -11,7 +11,7 @@ export const revalidate = 60
 async function getFeaturedFilms() {
   return prisma.film.findMany({
     where: { active: true },
-    orderBy: { createdAt: "desc" },
+    orderBy: { sortOrder: "asc" },
     take: 8,
   })
 }
