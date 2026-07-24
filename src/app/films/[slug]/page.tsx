@@ -159,9 +159,20 @@ export default async function FilmPage({ params }: Props) {
             <p className="text-sm text-[#888] mb-6">
               Directed by {film.director}
             </p>
-            <p className="text-[#bbb] text-base leading-relaxed">
-              {film.description}
-            </p>
+            <div className="space-y-2 text-[#bbb] text-base leading-relaxed">
+              {film.description.split("\n").map((line, i) => {
+                if (!line.trim()) return null
+                if (line.trimStart().startsWith("•")) {
+                  return (
+                    <p key={i} className="flex gap-2">
+                      <span className="text-[#cc2222] flex-shrink-0 mt-0.5">•</span>
+                      <span>{line.replace(/^[\s•]+/, "")}</span>
+                    </p>
+                  )
+                }
+                return <p key={i}>{line}</p>
+              })}
+            </div>
           </div>
 
           {/* Purchase panel */}
