@@ -89,7 +89,6 @@ export default async function HomePage() {
           <ScrollRow>
             {[
               { url: "https://res.cloudinary.com/dm7ckxbgc/image/upload/w_300,h_450,c_fill,q_auto/v1781806736/AREA_51_poster_lnoox6.jpg", title: "Area 51 Confidential" },
-              { url: "https://res.cloudinary.com/dm7ckxbgc/image/upload/w_300,h_450,c_fill,q_auto/v1781807095/BL2_jb9egc.jpg", title: "Bigfoot Lives 2" },
             ].map((film, i) => (
               <div key={i} className="flex-none w-36 sm:w-44">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
