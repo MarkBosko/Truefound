@@ -246,7 +246,7 @@ export default async function FilmPage({ params }: Props) {
         {related.length > 0 && (
           <section className="border-t border-[#1a1a1a] py-12">
             <div className="max-w-6xl mx-auto px-6">
-              <h2 className="text-xs uppercase tracking-[0.3em] text-[#555] mb-6">
+              <h2 className="text-sm uppercase tracking-[0.3em] text-[#aaa] mb-6">
                 You May Also Like
               </h2>
               <div className="grid grid-cols-2 gap-6 max-w-sm">
