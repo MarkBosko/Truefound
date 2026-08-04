@@ -2,6 +2,7 @@ import { notFound } from "next/navigation"
 import Image from "next/image"
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
+import FilmCard from "@/components/FilmCard"
 import { prisma } from "@/lib/db"
 import { formatPrice } from "@/lib/stripe"
 import PurchaseButtons from "./PurchaseButtons"
@@ -58,6 +59,14 @@ export default async function FilmPage({ params }: Props) {
   const { slug } = await params
   const film = await prisma.film.findUnique({ where: { slug, active: true } })
   if (!film) notFound()
+
+  const related = film.category === "CRYPTIDS"
+    ? await prisma.film.findMany({
+        where: { category: "CRYPTIDS", active: true, NOT: { slug } },
+        orderBy: { sortOrder: "asc" },
+        take: 2,
+      })
+    : []
 
   const genre = CATEGORY_GENRE[film.category] ?? "Documentary"
 
@@ -233,6 +242,21 @@ export default async function FilmPage({ params }: Props) {
             </div>
           </div>
         </div>
+        {/* You May Also Like */}
+        {related.length > 0 && (
+          <section className="border-t border-[#1a1a1a] py-12">
+            <div className="max-w-6xl mx-auto px-6">
+              <h2 className="text-xs uppercase tracking-[0.3em] text-[#555] mb-6">
+                You May Also Like
+              </h2>
+              <div className="grid grid-cols-2 gap-6 max-w-sm">
+                {related.map((r) => (
+                  <FilmCard key={r.id} {...r} />
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
       </main>
       <Footer />
     </>
