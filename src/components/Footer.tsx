@@ -1,4 +1,5 @@
 import Link from "next/link"
+import EmailSignupForm from "./EmailSignupForm"
 
 const USFlag = () => (
   <svg width="26" height="16" viewBox="0 0 26 16" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0 rounded-sm">
@@ -31,6 +32,19 @@ export default function Footer() {
   return (
     <footer className="mt-auto border-t border-[#222] pt-12 pb-8 px-6">
       <div className="max-w-6xl mx-auto">
+
+        {/* Email signup */}
+        <div className="border border-[#1e1e1e] rounded bg-[#0a0a0a] px-6 py-8 mb-10 flex flex-col sm:flex-row sm:items-center gap-4">
+          <div className="flex-1">
+            <p className="font-display text-sm font-bold uppercase tracking-[0.2em] text-white mb-1">
+              New Films. Rare Finds.
+            </p>
+            <p className="text-xs text-[#666]">
+              Get notified when we add creature, paranormal, and alien films.
+            </p>
+          </div>
+          <EmailSignupForm />
+        </div>
 
         {/* Main footer grid */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 mb-10">
