@@ -2,6 +2,29 @@ import { Resend } from "resend"
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
+export async function sendSubscriberWelcomeEmail(to: string) {
+  await resend.emails.send({
+    from: process.env.EMAIL_FROM!,
+    to,
+    subject: "You're on the TrueFoundMovies list",
+    html: `
+      <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; background: #0d0d0d; color: #ffffff; padding: 40px; border-radius: 8px;">
+        <h1 style="font-size: 28px; margin-bottom: 8px;">TRUE &raquo; FOUND</h1>
+        <hr style="border-color: #333; margin: 20px 0;" />
+        <p style="color: #aaa; margin: 12px 0; font-size: 16px;">
+          You&rsquo;re on the list. We&rsquo;ll let you know when new creature, paranormal, and alien films are added.
+        </p>
+        <a href="https://www.truefoundmovies.com/films" style="display: inline-block; margin-top: 24px; background: #ffffff; color: #0d0d0d; padding: 14px 32px; border-radius: 4px; text-decoration: none; font-weight: 700; font-size: 16px;">
+          Browse Films &raquo;
+        </a>
+        <p style="margin-top: 32px; color: #555; font-size: 13px;">
+          You received this because you signed up at TrueFoundMovies.com.
+        </p>
+      </div>
+    `,
+  })
+}
+
 export async function sendWatchEmail({
   to,
   filmTitle,
