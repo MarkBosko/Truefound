@@ -16,7 +16,7 @@ export async function sendSubscriberWelcomeEmail(to: string) {
         <p style="color: #aaa; margin: 12px 0; font-size: 16px;">
           You&rsquo;re on the list. We&rsquo;ll let you know when new creature, paranormal, and alien films are added.
         </p>
-        <a href="https://www.truefoundmovies.com/films" style="display: inline-block; margin-top: 24px; background: #ffffff; color: #0d0d0d; padding: 14px 32px; border-radius: 4px; text-decoration: none; font-weight: 700; font-size: 16px;">
+        <a href="https://www.truefoundmovies.com/films" style="display: inline-block; margin-top: 24px; background: #f5c800; color: #0d0d0d; padding: 14px 32px; border-radius: 4px; text-decoration: none; font-weight: 700; font-size: 16px;">
           Browse Films &raquo;
         </a>
         <p style="margin-top: 32px; color: #555; font-size: 13px;">
