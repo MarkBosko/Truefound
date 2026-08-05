@@ -6,7 +6,6 @@ import FilmCard from "@/components/FilmCard"
 import { prisma } from "@/lib/db"
 import { formatPrice } from "@/lib/stripe"
 import PurchaseButtons from "./PurchaseButtons"
-import TrailerPlayer from "./TrailerPlayer"
 
 export const revalidate = 60
 
@@ -131,13 +130,14 @@ export default async function FilmPage({ params }: Props) {
       <Header />
       <main className="flex-1">
         {/* Trailer */}
-        <TrailerPlayer
-          filmId={film.id}
-          vimeoTrailerId={film.vimeoTrailerId}
-          title={film.title}
-          rentalLabel={`Rent · ${formatPrice(film.rentalPrice)}`}
-          purchaseLabel={`Buy · ${formatPrice(film.purchasePrice)}`}
-        />
+        <div className="relative bg-black aspect-video max-h-[60vh] overflow-hidden">
+          <iframe
+            src={`https://embed.vhx.tv/videos/${film.vimeoTrailerId}?autoplay=1&muted=1`}
+            className="w-full h-full"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowFullScreen
+          />
+        </div>
 
         {/* Quick-access CTA — immediately below trailer */}
         <div className="bg-[#0d0d0d] border-b border-[#222] px-6 py-4">
