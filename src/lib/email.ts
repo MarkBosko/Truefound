@@ -9,7 +9,9 @@ export async function sendSubscriberWelcomeEmail(to: string) {
     subject: "You're on the TrueFoundMovies list",
     html: `
       <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; background: #0d0d0d; color: #ffffff; padding: 40px; border-radius: 8px;">
-        <img src="https://www.truefoundmovies.com/TrueFound-logo-transparent.png" alt="TrueFoundMovies" width="180" style="width: 180px; height: auto; display: block;" />
+        <div style="background: #ffffff; display: inline-block; padding: 10px 20px; border-radius: 4px; margin-bottom: 4px;">
+          <img src="https://www.truefoundmovies.com/TrueFound-logo-1.jpg" alt="TrueFoundMovies" width="180" style="width: 180px; height: auto; display: block;" />
+        </div>
         <hr style="border-color: #333; margin: 20px 0;" />
         <p style="color: #aaa; margin: 12px 0; font-size: 16px;">
           You&rsquo;re on the list. We&rsquo;ll let you know when new creature, paranormal, and alien films are added.
@@ -52,7 +54,9 @@ export async function sendWatchEmail({
     subject: `Your ${orderType === "RENTAL" ? "rental" : "purchase"}: ${filmTitle}`,
     html: `
       <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; background: #0d0d0d; color: #ffffff; padding: 40px; border-radius: 8px;">
-        <img src="https://www.truefoundmovies.com/TrueFound-logo-transparent.png" alt="TrueFoundMovies" width="180" style="width: 180px; height: auto; display: block;" />
+        <div style="background: #ffffff; display: inline-block; padding: 10px 20px; border-radius: 4px; margin-bottom: 4px;">
+          <img src="https://www.truefoundmovies.com/TrueFound-logo-1.jpg" alt="TrueFoundMovies" width="180" style="width: 180px; height: auto; display: block;" />
+        </div>
         <hr style="border-color: #333; margin: 20px 0;" />
         <h2 style="font-size: 20px; font-weight: 600;">${filmTitle}</h2>
         <p style="color: #aaa; margin: 12px 0;">
