@@ -2,17 +2,16 @@
 
 import { useEffect, useRef, useState } from "react"
 import PurchaseButtons from "./PurchaseButtons"
-import { formatPrice } from "@/lib/stripe"
 
 type Props = {
   filmId: string
   vimeoTrailerId: string
   title: string
-  rentalPrice: number
-  purchasePrice: number
+  rentalLabel: string
+  purchaseLabel: string
 }
 
-export default function TrailerPlayer({ filmId, vimeoTrailerId, title, rentalPrice, purchasePrice }: Props) {
+export default function TrailerPlayer({ filmId, vimeoTrailerId, title, rentalLabel, purchaseLabel }: Props) {
   const iframeRef = useRef<HTMLIFrameElement>(null)
   const [showCTA, setShowCTA] = useState(false)
 
@@ -62,10 +61,10 @@ export default function TrailerPlayer({ filmId, vimeoTrailerId, title, rentalPri
           </h2>
           <div className="flex gap-3 mt-1">
             <div className="w-36 sm:w-44">
-              <PurchaseButtons filmId={filmId} type="RENTAL" label={`Rent · ${formatPrice(rentalPrice)}`} />
+              <PurchaseButtons filmId={filmId} type="RENTAL" label={rentalLabel} />
             </div>
             <div className="w-36 sm:w-44">
-              <PurchaseButtons filmId={filmId} type="PURCHASE" label={`Buy · ${formatPrice(purchasePrice)}`} />
+              <PurchaseButtons filmId={filmId} type="PURCHASE" label={purchaseLabel} />
             </div>
           </div>
           <button

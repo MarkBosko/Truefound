@@ -135,8 +135,8 @@ export default async function FilmPage({ params }: Props) {
           filmId={film.id}
           vimeoTrailerId={film.vimeoTrailerId}
           title={film.title}
-          rentalPrice={film.rentalPrice}
-          purchasePrice={film.purchasePrice}
+          rentalLabel={`Rent · ${formatPrice(film.rentalPrice)}`}
+          purchaseLabel={`Buy · ${formatPrice(film.purchasePrice)}`}
         />
 
         {/* Quick-access CTA — immediately below trailer */}
