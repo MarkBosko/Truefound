@@ -16,31 +16,39 @@ export default function TrailerPlayer({ filmId, vimeoTrailerId, title, rentalLab
   const [showCTA, setShowCTA] = useState(false)
 
   useEffect(() => {
-    // Register for finish event once iframe loads
-    function onLoad() {
+    function send(method: string, value: string) {
       iframeRef.current?.contentWindow?.postMessage(
-        JSON.stringify({ method: "addEventListener", value: "finish" }),
+        JSON.stringify({ method, value }),
         "*"
       )
     }
 
-    const iframe = iframeRef.current
-    iframe?.addEventListener("load", onLoad)
-
-    // Vimeo / VHX sends a postMessage when playback ends
     function onMessage(e: MessageEvent) {
       let data = e.data
       if (typeof data === "string") {
         try { data = JSON.parse(data) } catch { return }
       }
-      if (data?.event === "finish") setShowCTA(true)
+      if (!data?.event) return
+
+      // Once the player signals ready, subscribe to finish + timeupdate
+      if (data.event === "ready") {
+        send("addEventListener", "finish")
+        send("addEventListener", "timeupdate")
+      }
+
+      // Direct finish event
+      if (data.event === "finish") {
+        setShowCTA(true)
+      }
+
+      // Fallback: timeupdate at ≥97% in case finish never fires
+      if (data.event === "timeupdate" && (data.data?.percent ?? 0) >= 0.97) {
+        setShowCTA(true)
+      }
     }
 
     window.addEventListener("message", onMessage)
-    return () => {
-      iframe?.removeEventListener("load", onLoad)
-      window.removeEventListener("message", onMessage)
-    }
+    return () => window.removeEventListener("message", onMessage)
   }, [])
 
   return (
