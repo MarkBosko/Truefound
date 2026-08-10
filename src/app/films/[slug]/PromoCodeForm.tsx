@@ -41,7 +41,7 @@ export default function PromoCodeForm({ filmId }: { filmId: string }) {
     <div className="mt-6 border-t border-[#1a1a1a] pt-4">
       <button
         onClick={() => setOpen((o) => !o)}
-        className="text-xs text-[#555] hover:text-[#888] transition-colors uppercase tracking-widest"
+        className="text-xs font-bold text-[#f5c800] hover:text-[#ffd700] transition-colors uppercase tracking-widest"
       >
         {open ? "▲ Hide" : "Have a screener code?"}
       </button>
