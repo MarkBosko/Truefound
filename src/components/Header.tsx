@@ -21,7 +21,7 @@ export default function Header() {
             href="/films"
             className="font-display text-base font-black tracking-widest uppercase text-white hover:text-[#f5c800] transition-colors"
           >
-            Browse All Films
+            All Films
           </Link>
         </nav>
       </div>
