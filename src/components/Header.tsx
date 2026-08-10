@@ -19,9 +19,9 @@ export default function Header() {
         <nav className="flex items-center gap-8">
           <Link
             href="/films"
-            className="font-display text-sm tracking-widest uppercase text-[#888] hover:text-white transition-colors"
+            className="font-display text-base font-black tracking-widest uppercase text-white hover:text-[#f5c800] transition-colors"
           >
-            Films
+            Browse All Films
           </Link>
         </nav>
       </div>
