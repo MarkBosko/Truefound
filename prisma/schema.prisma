@@ -28,7 +28,8 @@ model Film {
   createdAt      DateTime @default(now())
   updatedAt      DateTime @updatedAt
 
-  orders Order[]
+  orders     Order[]
+  promoCodes PromoCode[]
 
   @@map("films")
 }
@@ -38,13 +39,15 @@ model Order {
   filmId                String
   type                  OrderType
   amountCents           Int
-  stripePaymentIntentId String    @unique
+  stripePaymentIntentId String?   @unique
   customerEmail         String
   accessToken           String    @unique @default(uuid())
   expiresAt             DateTime?
+  promoCodeId           String?   @unique
   createdAt             DateTime  @default(now())
 
-  film Film @relation(fields: [filmId], references: [id])
+  film      Film       @relation(fields: [filmId], references: [id])
+  promoCode PromoCode? @relation(fields: [promoCodeId], references: [id])
 
   @@map("orders")
 }
@@ -58,6 +61,21 @@ enum Category {
   CRYPTIDS
   ALIENS
   PARANORMAL
+}
+
+model PromoCode {
+  id          String    @id @default(cuid())
+  code        String    @unique
+  filmId      String
+  usedAt      DateTime?
+  usedByEmail String?
+  expiresAt   DateTime
+  createdAt   DateTime  @default(now())
+
+  film  Film   @relation(fields: [filmId], references: [id])
+  order Order?
+
+  @@map("promo_codes")
 }
 
 model Subscriber {

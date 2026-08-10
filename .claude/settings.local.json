@@ -123,7 +123,12 @@
       "Bash(gh auth *)",
       "Bash(gh repo *)",
       "Bash(git -c credential.helper= -c \"url.https://$\\(gh auth token\\)@github.com.insteadOf=https://github.com\" push -u origin master)",
-      "Bash(rm src/app/films/[slug]/TrailerPlayer.tsx)"
+      "Bash(rm src/app/films/[slug]/TrailerPlayer.tsx)",
+      "Bash(vercel env *)",
+      "PowerShell(pip install openai-whisper 2>&1)",
+      "PowerShell(winget install Python.Python.3.11 --silent --accept-source-agreements --accept-package-agreements 2>&1)",
+      "PowerShell(winget install Mantej-Singh.STT-CLI --silent --accept-source-agreements --accept-package-agreements 2>&1)",
+      "PowerShell(Get-ChildItem \"$env:LOCALAPPDATA\\\\Microsoft\\\\WinGet\\\\Packages\\\\Mantej-Singh.STT-CLI_Microsoft.Winget.Source_8wekyb3d8bbwe\" -Recurse | Select-Object FullName)"
     ]
   }
 }

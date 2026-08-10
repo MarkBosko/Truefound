@@ -21,6 +21,7 @@ export default function AdminLayout({
             { href: "/admin", label: "Dashboard" },
             { href: "/admin/films", label: "Films" },
             { href: "/admin/orders", label: "Orders" },
+            { href: "/admin/promo-codes", label: "Screener Codes" },
           ].map(({ href, label }) => (
             <Link
               key={href}

@@ -6,6 +6,7 @@ import FilmCard from "@/components/FilmCard"
 import { prisma } from "@/lib/db"
 import { formatPrice } from "@/lib/stripe"
 import PurchaseButtons from "./PurchaseButtons"
+import PromoCodeForm from "./PromoCodeForm"
 
 export const revalidate = 60
 
@@ -233,6 +234,8 @@ export default async function FilmPage({ params }: Props) {
             <p className="text-xs text-[#555] mt-6 text-center">
               A watch link will be emailed to you after checkout.
             </p>
+
+            <PromoCodeForm filmId={film.id} />
 
             <div className="mt-4 flex items-center justify-center gap-2 border border-[#1a1a1a] rounded px-3 py-2">
               <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5 text-[#4ade80] flex-none" viewBox="0 0 24 24" fill="currentColor">
