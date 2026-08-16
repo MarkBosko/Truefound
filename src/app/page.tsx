@@ -16,8 +16,17 @@ async function getFeaturedFilms() {
   })
 }
 
+async function getFilmsByCategory() {
+  const [cryptids, aliens, paranormal] = await Promise.all([
+    prisma.film.findMany({ where: { active: true, category: "CRYPTIDS" }, orderBy: { sortOrder: "asc" } }),
+    prisma.film.findMany({ where: { active: true, category: "ALIENS" }, orderBy: { sortOrder: "asc" } }),
+    prisma.film.findMany({ where: { active: true, category: "PARANORMAL" }, orderBy: { sortOrder: "asc" } }),
+  ])
+  return { cryptids, aliens, paranormal }
+}
+
 export default async function HomePage() {
-  const films = await getFeaturedFilms()
+  const [films, categories] = await Promise.all([getFeaturedFilms(), getFilmsByCategory()])
 
   return (
     <>
@@ -43,20 +52,16 @@ export default async function HomePage() {
         )}
 
         {/* Category rows */}
-        {films.length > 0 && (() => {
-          const CATEGORIES = [
-            { key: "CRYPTIDS", label: "Creatures" },
-            { key: "ALIENS", label: "Aliens" },
-            { key: "PARANORMAL", label: "Paranormal" },
-          ]
-          const grouped = CATEGORIES.map((cat) => ({
-            ...cat,
-            films: films.filter((f) => f.category === cat.key),
-          })).filter((cat) => cat.films.length > 0)
+        {(() => {
+          const rows = [
+            { key: "CRYPTIDS", label: "Creatures", films: categories.cryptids },
+            { key: "ALIENS",   label: "Aliens",    films: categories.aliens },
+            { key: "PARANORMAL", label: "Paranormal", films: categories.paranormal },
+          ].filter((r) => r.films.length > 0)
 
-          return (
+          return rows.length > 0 ? (
             <div className="py-6 space-y-8">
-              {grouped.map((cat) => (
+              {rows.map((cat) => (
                 <section key={cat.key} className="px-6">
                   <div className="flex items-center justify-between mb-4">
                     <h2 className="text-xs uppercase tracking-[0.3em] text-[#888]">
@@ -79,7 +84,7 @@ export default async function HomePage() {
                 </section>
               ))}
             </div>
-          )
+          ) : null
         })()}
         {/* Coming Soon */}
         <section className="px-6 pb-10">
