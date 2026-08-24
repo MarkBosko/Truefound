@@ -86,31 +86,6 @@ export default async function HomePage() {
             </div>
           ) : null
         })()}
-        {/* Coming Soon */}
-        <section className="px-6 pb-10">
-          <div className="flex items-center justify-between mb-4">
-            <h2 className="text-xs uppercase tracking-[0.3em] text-[#888]">Coming Soon</h2>
-          </div>
-          <ScrollRow>
-            {[
-              { url: "https://res.cloudinary.com/dm7ckxbgc/image/upload/w_300,h_450,c_fill,q_auto/v1781806736/AREA_51_poster_lnoox6.jpg", title: "Area 51 Confidential" },
-            ].map((film, i) => (
-              <div key={i} className="flex-none w-36 sm:w-44">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={film.url}
-                  alt={film.title}
-                  className="w-full aspect-[2/3] object-cover"
-                />
-                <div className="mt-3">
-                  <h3 className="font-bold text-sm tracking-wide uppercase text-white line-clamp-1">
-                    {film.title}
-                  </h3>
-                </div>
-              </div>
-            ))}
-          </ScrollRow>
-        </section>
       </main>
       <Footer />
     </>
