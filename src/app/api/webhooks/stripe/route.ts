@@ -36,6 +36,8 @@ export async function POST(req: NextRequest) {
         ? new Date(Date.now() + 48 * 60 * 60 * 1000)
         : null
 
+    const promoCodeId = session.metadata?.promoCodeId || undefined
+
     const order = await prisma.order.create({
       data: {
         filmId,
@@ -44,8 +46,16 @@ export async function POST(req: NextRequest) {
         stripePaymentIntentId: session.payment_intent as string,
         customerEmail,
         expiresAt,
+        ...(promoCodeId ? { promoCodeId } : {}),
       },
     })
+
+    if (promoCodeId) {
+      await prisma.promoCode.update({
+        where: { id: promoCodeId },
+        data: { usedAt: new Date(), usedByEmail: customerEmail },
+      })
+    }
 
     const watchUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/watch/${order.accessToken}`
 

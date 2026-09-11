@@ -128,7 +128,21 @@
       "PowerShell(pip install openai-whisper 2>&1)",
       "PowerShell(winget install Python.Python.3.11 --silent --accept-source-agreements --accept-package-agreements 2>&1)",
       "PowerShell(winget install Mantej-Singh.STT-CLI --silent --accept-source-agreements --accept-package-agreements 2>&1)",
-      "PowerShell(Get-ChildItem \"$env:LOCALAPPDATA\\\\Microsoft\\\\WinGet\\\\Packages\\\\Mantej-Singh.STT-CLI_Microsoft.Winget.Source_8wekyb3d8bbwe\" -Recurse | Select-Object FullName)"
+      "PowerShell(Get-ChildItem \"$env:LOCALAPPDATA\\\\Microsoft\\\\WinGet\\\\Packages\\\\Mantej-Singh.STT-CLI_Microsoft.Winget.Source_8wekyb3d8bbwe\" -Recurse | Select-Object FullName)",
+      "Bash(node check_film.mjs)",
+      "Bash(python3 \"C:/Users/13306/AppData/Local/Temp/claude/C--Users-13306-Desktop-Truefound/1ccf5265-01c4-4690-a5bd-3384e43d6170/scratchpad/fix_date.py\")",
+      "Bash(node fix_date.mjs)",
+      "Bash(where magick *)",
+      "Bash(where convert *)",
+      "Bash(where ffmpeg *)",
+      "Bash(where pandoc *)",
+      "Bash(pandoc --version)",
+      "PowerShell(Get-Command pandoc -ErrorAction SilentlyContinue)",
+      "PowerShell(pandoc --version 2>&1)",
+      "Bash(where unzip *)",
+      "Bash(where 7z)",
+      "Bash(where tar *)",
+      "Bash(node extract.js)"
     ]
   }
 }

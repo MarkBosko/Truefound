@@ -44,6 +44,7 @@ model Order {
   accessToken           String    @unique @default(uuid())
   expiresAt             DateTime?
   promoCodeId           String?   @unique
+  followUpSentAt        DateTime?
   createdAt             DateTime  @default(now())
 
   film      Film       @relation(fields: [filmId], references: [id])
@@ -64,15 +65,16 @@ enum Category {
 }
 
 model PromoCode {
-  id          String    @id @default(cuid())
-  code        String    @unique
-  filmId      String
-  usedAt      DateTime?
-  usedByEmail String?
-  expiresAt   DateTime
-  createdAt   DateTime  @default(now())
+  id            String    @id @default(cuid())
+  code          String    @unique
+  filmId        String?
+  discountCents Int?
+  usedAt        DateTime?
+  usedByEmail   String?
+  expiresAt     DateTime
+  createdAt     DateTime  @default(now())
 
-  film  Film   @relation(fields: [filmId], references: [id])
+  film  Film?  @relation(fields: [filmId], references: [id])
   order Order?
 
   @@map("promo_codes")

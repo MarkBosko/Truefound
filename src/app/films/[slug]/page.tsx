@@ -235,7 +235,7 @@ export default async function FilmPage({ params }: Props) {
               A watch link will be emailed to you after checkout.
             </p>
 
-            <PromoCodeForm filmId={film.id} />
+            <PromoCodeForm filmId={film.id} rentalPrice={film.rentalPrice} />
 
             <div className="mt-4 flex items-center justify-center gap-2 border border-[#1a1a1a] rounded px-3 py-2">
               <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5 text-[#4ade80] flex-none" viewBox="0 0 24 24" fill="currentColor">

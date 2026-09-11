@@ -52,7 +52,7 @@ export default async function PromoCodesPage() {
               return (
                 <tr key={c.id} className="border-b border-[#111] hover:bg-[#0d0d0d]">
                   <td className="px-4 py-3 font-mono font-bold tracking-widest text-white">{c.code}</td>
-                  <td className="px-4 py-3 text-[#aaa]">{c.film.title}</td>
+                  <td className="px-4 py-3 text-[#aaa]">{c.film?.title ?? "Any Film"}</td>
                   <td className="px-4 py-3">
                     <span className="text-xs font-bold uppercase tracking-widest" style={{ color: s.color }}>
                       {s.label}

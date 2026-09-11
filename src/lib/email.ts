@@ -27,6 +27,47 @@ export async function sendSubscriberWelcomeEmail(to: string) {
   })
 }
 
+export async function sendRentalFollowUpEmail({
+  to,
+  filmTitle,
+  discountCode,
+}: {
+  to: string
+  filmTitle: string
+  discountCode: string
+}) {
+  await resend.emails.send({
+    from: process.env.EMAIL_FROM!,
+    to,
+    subject: `Hope you enjoyed ${filmTitle} — here's $1.00 off your next rental`,
+    html: `
+      <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; background: #0d0d0d; color: #ffffff; padding: 40px; border-radius: 8px;">
+        <div style="background: #ffffff; display: inline-block; padding: 10px 20px; border-radius: 4px; margin-bottom: 4px;">
+          <img src="https://www.truefoundmovies.com/TrueFound-logo-1.jpg" alt="TrueFoundMovies" width="180" style="width: 180px; height: auto; display: block;" />
+        </div>
+        <hr style="border-color: #333; margin: 20px 0;" />
+        <p style="color: #aaa; margin: 12px 0; font-size: 16px;">
+          Hope you enjoyed <strong style="color: #fff;">${filmTitle}</strong>.
+        </p>
+        <p style="color: #aaa; margin: 12px 0; font-size: 16px;">
+          As a thank you, here&rsquo;s <strong style="color: #f5c800;">$1.00 off</strong> your next rental — good for any film on TrueFoundMovies, for the next 7 days.
+        </p>
+        <div style="background: #111; border: 1px solid #333; border-radius: 6px; padding: 20px; margin: 24px 0; text-align: center;">
+          <p style="color: #888; font-size: 12px; uppercase: true; letter-spacing: 0.15em; margin: 0 0 8px 0;">YOUR DISCOUNT CODE</p>
+          <p style="font-family: monospace; font-size: 28px; font-weight: 700; color: #f5c800; letter-spacing: 0.2em; margin: 0;">${discountCode}</p>
+          <p style="color: #555; font-size: 11px; margin: 8px 0 0 0;">Single use · Expires in 7 days · Any rental</p>
+        </div>
+        <a href="https://www.truefoundmovies.com/films" style="display: inline-block; margin-top: 8px; background: #f5c800; color: #0d0d0d; padding: 14px 32px; border-radius: 4px; text-decoration: none; font-weight: 700; font-size: 16px;">
+          Browse Films &raquo;
+        </a>
+        <p style="margin-top: 32px; color: #555; font-size: 13px;">
+          Enter the code in the &ldquo;Have a code?&rdquo; section on any film page at checkout.
+        </p>
+      </div>
+    `,
+  })
+}
+
 export async function sendWatchEmail({
   to,
   filmTitle,
