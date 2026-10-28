@@ -482,7 +482,7 @@ export default async function BigfootHoaxPage() {
               <p className="text-white font-bold leading-relaxed">
                 Tom Biscardi documented all of this in 2012. Heironimus. The confession.
                 The firsthand witnesses. The proof. He did it first — and paid for it
-                with threats against his family.
+                with threats against him and his family.
               </p>
             </div>
 
