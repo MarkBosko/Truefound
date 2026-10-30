@@ -18,10 +18,11 @@ export async function GET() {
 
 export async function POST(req: Request) {
   if (!(await verifyAdminSession())) return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
-  const { filmId } = await req.json()
+  const { filmId, grantsPurchase } = await req.json()
   if (!filmId) return NextResponse.json({ error: "filmId required" }, { status: 400 })
 
-  const expiresAt = new Date(Date.now() + 15 * 24 * 60 * 60 * 1000)
+  // Gift purchase codes never expire; screener codes expire in 15 days
+  const expiresAt = grantsPurchase ? null : new Date(Date.now() + 15 * 24 * 60 * 60 * 1000)
 
   // Retry on collision (extremely unlikely)
   let code = generateCode()
@@ -32,7 +33,7 @@ export async function POST(req: Request) {
   }
 
   const promo = await prisma.promoCode.create({
-    data: { code, filmId, expiresAt },
+    data: { code, filmId, grantsPurchase: grantsPurchase ?? false, expiresAt },
     include: { film: { select: { title: true } } },
   })
 

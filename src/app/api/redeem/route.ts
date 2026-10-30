@@ -13,17 +13,18 @@ export async function POST(req: Request) {
 
   const promo = await prisma.promoCode.findUnique({ where: { code: code.trim().toUpperCase() } })
 
-  if (!promo)                       return NextResponse.json({ error: "Code not found" }, { status: 404 })
-  if (promo.filmId !== filmId)      return NextResponse.json({ error: "Code not valid for this film" }, { status: 400 })
-  if (promo.usedAt)                 return NextResponse.json({ error: "Code has already been used" }, { status: 400 })
-  if (promo.expiresAt < new Date()) return NextResponse.json({ error: "Code has expired" }, { status: 400 })
+  if (!promo)                                           return NextResponse.json({ error: "Code not found" }, { status: 404 })
+  if (promo.filmId !== filmId)                          return NextResponse.json({ error: "Code not valid for this film" }, { status: 400 })
+  if (promo.usedAt)                                     return NextResponse.json({ error: "Code has already been used" }, { status: 400 })
+  if (promo.expiresAt && promo.expiresAt < new Date())  return NextResponse.json({ error: "Code has expired" }, { status: 400 })
 
-  const expiresAt = new Date(Date.now() + 48 * 60 * 60 * 1000)
+  const isPurchase = promo.grantsPurchase
+  const expiresAt = isPurchase ? null : new Date(Date.now() + 48 * 60 * 60 * 1000)
 
   const order = await prisma.order.create({
     data: {
       filmId,
-      type: "RENTAL",
+      type: isPurchase ? "PURCHASE" : "RENTAL",
       amountCents: 0,
       customerEmail: email,
       expiresAt,
@@ -42,7 +43,7 @@ export async function POST(req: Request) {
   await sendWatchEmail({
     to: email,
     filmTitle: film!.title,
-    orderType: "RENTAL",
+    orderType: isPurchase ? "PURCHASE" : "RENTAL",
     watchUrl,
     expiresAt,
   })

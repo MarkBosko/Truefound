@@ -3,11 +3,13 @@
 import { useState } from "react"
 
 type Film = { id: string; title: string }
+type CodeType = "screener" | "gift-purchase"
 
 export default function GenerateCodeForm({ films }: { films: Film[] }) {
   const [filmId, setFilmId] = useState("")
+  const [codeType, setCodeType] = useState<CodeType>("screener")
   const [loading, setLoading] = useState(false)
-  const [result, setResult] = useState<{ code: string; film: { title: string } } | null>(null)
+  const [result, setResult] = useState<{ code: string; film: { title: string }; grantsPurchase: boolean } | null>(null)
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
@@ -16,7 +18,7 @@ export default function GenerateCodeForm({ films }: { films: Film[] }) {
     const res = await fetch("/api/admin/promo-codes", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ filmId }),
+      body: JSON.stringify({ filmId, grantsPurchase: codeType === "gift-purchase" }),
     })
     const data = await res.json()
     setLoading(false)
@@ -30,6 +32,17 @@ export default function GenerateCodeForm({ films }: { films: Film[] }) {
     <div className="border border-[#222] bg-[#111] rounded p-6 mb-8">
       <h2 className="text-xs uppercase tracking-[0.3em] text-[#888] mb-4">Generate New Code</h2>
       <form onSubmit={handleSubmit} className="flex gap-3 items-end">
+        <div>
+          <label className="text-xs text-[#666] uppercase tracking-widest block mb-1">Type</label>
+          <select
+            value={codeType}
+            onChange={(e) => setCodeType(e.target.value as CodeType)}
+            className="bg-[#0a0a0a] border border-[#2a2a2a] rounded px-3 py-2 text-sm text-white focus:outline-none focus:border-[#555]"
+          >
+            <option value="screener">Screener (48hr rental)</option>
+            <option value="gift-purchase">Gift Purchase (lifetime)</option>
+          </select>
+        </div>
         <div className="flex-1">
           <label className="text-xs text-[#666] uppercase tracking-widest block mb-1">Film</label>
           <select
@@ -56,7 +69,12 @@ export default function GenerateCodeForm({ films }: { films: Film[] }) {
       {result && (
         <div className="mt-4 border border-[#2a2a2a] rounded px-4 py-3 flex items-center gap-4">
           <span className="font-mono text-lg font-bold tracking-widest text-white">{result.code}</span>
-          <span className="text-xs text-[#666]">{result.film.title} · expires in 15 days</span>
+          <span className="text-xs text-[#666]">
+            {result.film.title} · {result.grantsPurchase ? "lifetime access" : "expires in 15 days"}
+          </span>
+          {result.grantsPurchase && (
+            <span className="text-xs font-bold uppercase tracking-widest text-[#f5c800]">Gift Purchase</span>
+          )}
           <button
             onClick={() => navigator.clipboard.writeText(result.code)}
             className="ml-auto text-xs text-[#666] hover:text-white transition-colors uppercase tracking-widest"

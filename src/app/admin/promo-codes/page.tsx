@@ -16,14 +16,14 @@ export default async function PromoCodesPage() {
 
   function status(c: typeof codes[0]) {
     if (c.usedAt) return { label: "Used", color: "#666" }
-    if (c.expiresAt < now) return { label: "Expired", color: "#cc4444" }
+    if (c.expiresAt && c.expiresAt < now) return { label: "Expired", color: "#cc4444" }
     return { label: "Active", color: "#4ade80" }
   }
 
   return (
     <div>
       <div className="flex items-center justify-between mb-8">
-        <h1 className="text-xl font-black uppercase tracking-widest">Screener Codes</h1>
+        <h1 className="text-xl font-black uppercase tracking-widest">Promo Codes</h1>
       </div>
 
       <GenerateCodeForm films={films} />
@@ -32,7 +32,7 @@ export default async function PromoCodesPage() {
         <table className="w-full text-sm">
           <thead>
             <tr className="border-b border-[#1a1a1a]">
-              {["Code", "Film", "Status", "Expires", "Used By"].map((h) => (
+              {["Code", "Film", "Type", "Status", "Expires", "Used By"].map((h) => (
                 <th key={h} className="text-left text-xs uppercase tracking-[0.2em] text-[#555] px-4 py-3 font-normal">
                   {h}
                 </th>
@@ -42,7 +42,7 @@ export default async function PromoCodesPage() {
           <tbody>
             {codes.length === 0 && (
               <tr>
-                <td colSpan={5} className="px-4 py-8 text-center text-[#555] text-xs">
+                <td colSpan={6} className="px-4 py-8 text-center text-[#555] text-xs">
                   No codes yet. Generate one above.
                 </td>
               </tr>
@@ -53,13 +53,20 @@ export default async function PromoCodesPage() {
                 <tr key={c.id} className="border-b border-[#111] hover:bg-[#0d0d0d]">
                   <td className="px-4 py-3 font-mono font-bold tracking-widest text-white">{c.code}</td>
                   <td className="px-4 py-3 text-[#aaa]">{c.film?.title ?? "Any Film"}</td>
+                  <td className="px-4 py-3 text-xs">
+                    {c.grantsPurchase
+                      ? <span className="font-bold uppercase tracking-widest text-[#f5c800]">Gift Purchase</span>
+                      : <span className="text-[#888]">Screener</span>}
+                  </td>
                   <td className="px-4 py-3">
                     <span className="text-xs font-bold uppercase tracking-widest" style={{ color: s.color }}>
                       {s.label}
                     </span>
                   </td>
                   <td className="px-4 py-3 text-[#666] text-xs">
-                    {c.expiresAt.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}
+                    {c.expiresAt
+                      ? c.expiresAt.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })
+                      : "Never"}
                   </td>
                   <td className="px-4 py-3 text-[#666] text-xs">{c.usedByEmail ?? "—"}</td>
                 </tr>
