@@ -21,7 +21,7 @@ export async function POST(req: NextRequest) {
     const validDiscount =
       promo &&
       !promo.usedAt &&
-      promo.expiresAt > new Date() &&
+      promo.expiresAt !== null && promo.expiresAt > new Date() &&
       promo.discountCents !== null &&
       (promo.filmId === null || promo.filmId === filmId)
     if (validDiscount) {
