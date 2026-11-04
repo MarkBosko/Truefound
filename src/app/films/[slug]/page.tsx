@@ -148,10 +148,10 @@ export default async function FilmPage({ params }: Props) {
             </h2>
             <div className="flex gap-3">
               <div className="flex-1 sm:flex-none sm:w-40">
-                <PurchaseButtons filmId={film.id} type="RENTAL" label={`Rent · ${formatPrice(film.rentalPrice)}`} />
+                <PurchaseButtons filmId={film.id} type="RENTAL" label={`Rent · ${formatPrice(film.rentalPrice)}`} price={film.rentalPrice} />
               </div>
               <div className="flex-1 sm:flex-none sm:w-40">
-                <PurchaseButtons filmId={film.id} type="PURCHASE" label={`Buy · ${formatPrice(film.purchasePrice)}`} />
+                <PurchaseButtons filmId={film.id} type="PURCHASE" label={`Buy · ${formatPrice(film.purchasePrice)}`} price={film.purchasePrice} />
               </div>
             </div>
           </div>
@@ -208,6 +208,7 @@ export default async function FilmPage({ params }: Props) {
                   filmId={film.id}
                   type="RENTAL"
                   label={`Rent · ${formatPrice(film.rentalPrice)}`}
+                  price={film.rentalPrice}
                 />
               </div>
 
@@ -227,6 +228,7 @@ export default async function FilmPage({ params }: Props) {
                   filmId={film.id}
                   type="PURCHASE"
                   label={`Buy · ${formatPrice(film.purchasePrice)}`}
+                  price={film.purchasePrice}
                 />
               </div>
             </div>
