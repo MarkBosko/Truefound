@@ -147,12 +147,20 @@ export default async function FilmPage({ params }: Props) {
               {film.title}
             </h2>
             <div className="flex gap-3">
-              <div className="flex-1 sm:flex-none sm:w-40">
-                <PurchaseButtons filmId={film.id} type="RENTAL" label={`Rent · ${formatPrice(film.rentalPrice)}`} price={film.rentalPrice} />
-              </div>
-              <div className="flex-1 sm:flex-none sm:w-40">
-                <PurchaseButtons filmId={film.id} type="PURCHASE" label={`Buy · ${formatPrice(film.purchasePrice)}`} price={film.purchasePrice} />
-              </div>
+              {film.rentalPrice === 0 && film.purchasePrice === 0 ? (
+                <div className="sm:w-48">
+                  <PurchaseButtons filmId={film.id} type="PURCHASE" label="Watch Free" price={0} />
+                </div>
+              ) : (
+                <>
+                  <div className="flex-1 sm:flex-none sm:w-40">
+                    <PurchaseButtons filmId={film.id} type="RENTAL" label={`Rent · ${formatPrice(film.rentalPrice)}`} price={film.rentalPrice} />
+                  </div>
+                  <div className="flex-1 sm:flex-none sm:w-40">
+                    <PurchaseButtons filmId={film.id} type="PURCHASE" label={`Buy · ${formatPrice(film.purchasePrice)}`} price={film.purchasePrice} />
+                  </div>
+                </>
+              )}
             </div>
           </div>
         </div>
@@ -191,51 +199,80 @@ export default async function FilmPage({ params }: Props) {
               Get Access
             </h2>
 
-            <div className="space-y-4">
-              <div className="border border-[#2a2a2a] rounded p-4">
-                <div className="flex items-center justify-between mb-1">
-                  <span className="font-display text-sm font-bold uppercase tracking-wider">
-                    Rent
-                  </span>
-                  <span className="font-display text-lg font-black">
-                    {formatPrice(film.rentalPrice)}
-                  </span>
+            {film.rentalPrice === 0 && film.purchasePrice === 0 ? (
+              <div>
+                <div className="border border-[#2a2a2a] rounded p-4">
+                  <div className="flex items-center justify-between mb-1">
+                    <span className="font-display text-sm font-bold uppercase tracking-wider">
+                      Free
+                    </span>
+                    <span className="font-display text-lg font-black text-[#4ade80]">
+                      $0.00
+                    </span>
+                  </div>
+                  <p className="text-xs text-[#666] mb-4">
+                    Permanent streaming access · No subscription required
+                  </p>
+                  <PurchaseButtons
+                    filmId={film.id}
+                    type="PURCHASE"
+                    label="Watch Free"
+                    price={0}
+                  />
                 </div>
-                <p className="text-xs text-[#666] mb-4">
-                  48-hour streaming access
+                <p className="text-xs text-[#555] mt-6 text-center">
+                  A watch link will be emailed to you.
                 </p>
-                <PurchaseButtons
-                  filmId={film.id}
-                  type="RENTAL"
-                  label={`Rent · ${formatPrice(film.rentalPrice)}`}
-                  price={film.rentalPrice}
-                />
               </div>
-
-              <div className="border border-[#2a2a2a] rounded p-4">
-                <div className="flex items-center justify-between mb-1">
-                  <span className="font-display text-sm font-bold uppercase tracking-wider">
-                    Own
-                  </span>
-                  <span className="font-display text-lg font-black">
-                    {formatPrice(film.purchasePrice)}
-                  </span>
+            ) : (
+              <div className="space-y-4">
+                <div className="border border-[#2a2a2a] rounded p-4">
+                  <div className="flex items-center justify-between mb-1">
+                    <span className="font-display text-sm font-bold uppercase tracking-wider">
+                      Rent
+                    </span>
+                    <span className="font-display text-lg font-black">
+                      {formatPrice(film.rentalPrice)}
+                    </span>
+                  </div>
+                  <p className="text-xs text-[#666] mb-4">
+                    48-hour streaming access
+                  </p>
+                  <PurchaseButtons
+                    filmId={film.id}
+                    type="RENTAL"
+                    label={`Rent · ${formatPrice(film.rentalPrice)}`}
+                    price={film.rentalPrice}
+                  />
                 </div>
-                <p className="text-xs text-[#666] mb-4">
-                  Permanent streaming access
-                </p>
-                <PurchaseButtons
-                  filmId={film.id}
-                  type="PURCHASE"
-                  label={`Buy · ${formatPrice(film.purchasePrice)}`}
-                  price={film.purchasePrice}
-                />
-              </div>
-            </div>
 
-            <p className="text-xs text-[#555] mt-6 text-center">
-              A watch link will be emailed to you after checkout.
-            </p>
+                <div className="border border-[#2a2a2a] rounded p-4">
+                  <div className="flex items-center justify-between mb-1">
+                    <span className="font-display text-sm font-bold uppercase tracking-wider">
+                      Own
+                    </span>
+                    <span className="font-display text-lg font-black">
+                      {formatPrice(film.purchasePrice)}
+                    </span>
+                  </div>
+                  <p className="text-xs text-[#666] mb-4">
+                    Permanent streaming access
+                  </p>
+                  <PurchaseButtons
+                    filmId={film.id}
+                    type="PURCHASE"
+                    label={`Buy · ${formatPrice(film.purchasePrice)}`}
+                    price={film.purchasePrice}
+                  />
+                </div>
+              </div>
+            )}
+
+            {!(film.rentalPrice === 0 && film.purchasePrice === 0) && (
+              <p className="text-xs text-[#555] mt-6 text-center">
+                A watch link will be emailed to you after checkout.
+              </p>
+            )}
 
             <PromoCodeForm filmId={film.id} rentalPrice={film.rentalPrice} />
 
