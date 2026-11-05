@@ -41,7 +41,7 @@ export default function FilmCard({
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         {rentalPrice === 0 && purchasePrice === 0 && (
-          <div className="absolute top-2 left-2 bg-[#f5c800] text-black text-[10px] font-black uppercase tracking-widest px-2 py-0.5">
+          <div className="absolute top-4 right-[-28px] bg-[#f5c800] text-black text-[10px] font-black uppercase tracking-widest px-10 py-1 rotate-45 origin-center">
             Free
           </div>
         )}
