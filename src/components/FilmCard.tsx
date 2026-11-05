@@ -40,6 +40,11 @@ export default function FilmCard({
           sizes="(max-width: 768px) 50vw, 25vw"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        {rentalPrice === 0 && purchasePrice === 0 && (
+          <div className="absolute top-2 left-2 bg-[#f5c800] text-black text-[10px] font-black uppercase tracking-widest px-2 py-0.5">
+            Free
+          </div>
+        )}
         <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
           <p className="font-display text-xs text-[#aaa] uppercase tracking-widest">
             {rentalPrice === 0 && purchasePrice === 0 ? "Watch Free" : <>Rent {formatPrice(rentalPrice)} &nbsp;·&nbsp; Own {formatPrice(purchasePrice)}</>}
