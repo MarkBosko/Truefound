@@ -42,7 +42,7 @@ export default function FilmCard({
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
           <p className="font-display text-xs text-[#aaa] uppercase tracking-widest">
-            Rent {formatPrice(rentalPrice)} &nbsp;·&nbsp; Own {formatPrice(purchasePrice)}
+            {rentalPrice === 0 && purchasePrice === 0 ? "Watch Free" : <>Rent {formatPrice(rentalPrice)} &nbsp;·&nbsp; Own {formatPrice(purchasePrice)}</>}
           </p>
         </div>
       </div>
@@ -54,7 +54,7 @@ export default function FilmCard({
           {director} · {year} · {CATEGORY_LABELS[category] ?? category}
         </p>
         <p className="text-xs text-[#888] mt-1">
-          Rent {formatPrice(rentalPrice)} &nbsp;·&nbsp; Own {formatPrice(purchasePrice)}
+          {rentalPrice === 0 && purchasePrice === 0 ? "Watch Free" : <>Rent {formatPrice(rentalPrice)} &nbsp;·&nbsp; Own {formatPrice(purchasePrice)}</>}
         </p>
       </div>
     </Link>
