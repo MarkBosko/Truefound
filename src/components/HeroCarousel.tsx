@@ -90,7 +90,7 @@ export default function HeroCarousel({ films }: { films: Film[] }) {
             href={`/films/${film.slug}`}
             className="font-display bg-white text-black px-8 py-3 text-sm font-bold uppercase tracking-widest hover:bg-[#e0e0e0] transition-colors"
           >
-            Trailer / Rent / Buy »
+            {film.rentalPrice === 0 && film.purchasePrice === 0 ? "Stream Free »" : "Trailer / Rent / Buy »"}
           </Link>
           <Link
             href="/films"
@@ -100,8 +100,9 @@ export default function HeroCarousel({ films }: { films: Film[] }) {
           </Link>
         </div>
         <p className="mt-4 text-xs text-[#666]">
-          Rent from {formatPrice(film.rentalPrice)}&nbsp;·&nbsp;Own from{" "}
-          {formatPrice(film.purchasePrice)}
+          {film.rentalPrice === 0 && film.purchasePrice === 0
+            ? "Free · TrueFound Vault"
+            : <>Rent from {formatPrice(film.rentalPrice)}&nbsp;·&nbsp;Own from {formatPrice(film.purchasePrice)}</>}
         </p>
 
         {/* Dot / pill indicators — only shown when > 1 film */}
