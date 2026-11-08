@@ -6,6 +6,7 @@ const CATEGORY_LABELS: Record<string, string> = {
   CRYPTIDS: "Creatures",
   ALIENS: "Aliens",
   PARANORMAL: "Paranormal",
+  VAULT: "TrueFound Vault",
 }
 
 type FilmCardProps = {

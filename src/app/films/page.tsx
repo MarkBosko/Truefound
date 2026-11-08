@@ -11,9 +11,10 @@ export const metadata = {
 }
 
 const CATEGORIES = [
-  { key: "CRYPTIDS", label: "Creatures" },
-  { key: "ALIENS", label: "Aliens" },
+  { key: "CRYPTIDS",   label: "Creatures" },
+  { key: "ALIENS",     label: "Aliens" },
   { key: "PARANORMAL", label: "Paranormal" },
+  { key: "VAULT",      label: "TrueFound Vault" },
 ]
 
 export default async function FilmsPage() {

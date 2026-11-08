@@ -62,6 +62,7 @@ enum Category {
   CRYPTIDS
   ALIENS
   PARANORMAL
+  VAULT
 }
 
 model PromoCode {

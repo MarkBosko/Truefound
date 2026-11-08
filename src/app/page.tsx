@@ -17,12 +17,13 @@ async function getFeaturedFilms() {
 }
 
 async function getFilmsByCategory() {
-  const [cryptids, aliens, paranormal] = await Promise.all([
+  const [cryptids, aliens, paranormal, vault] = await Promise.all([
     prisma.film.findMany({ where: { active: true, category: "CRYPTIDS" }, orderBy: { sortOrder: "asc" } }),
     prisma.film.findMany({ where: { active: true, category: "ALIENS" }, orderBy: { sortOrder: "asc" } }),
     prisma.film.findMany({ where: { active: true, category: "PARANORMAL" }, orderBy: { sortOrder: "asc" } }),
+    prisma.film.findMany({ where: { active: true, category: "VAULT" }, orderBy: { sortOrder: "asc" } }),
   ])
-  return { cryptids, aliens, paranormal }
+  return { cryptids, aliens, paranormal, vault }
 }
 
 export default async function HomePage() {
@@ -54,9 +55,10 @@ export default async function HomePage() {
         {/* Category rows */}
         {(() => {
           const rows = [
-            { key: "CRYPTIDS", label: "Creatures", films: categories.cryptids },
-            { key: "ALIENS",   label: "Aliens",    films: categories.aliens },
-            { key: "PARANORMAL", label: "Paranormal", films: categories.paranormal },
+            { key: "CRYPTIDS",   label: "Creatures",        films: categories.cryptids },
+            { key: "ALIENS",     label: "Aliens",           films: categories.aliens },
+            { key: "PARANORMAL", label: "Paranormal",       films: categories.paranormal },
+            { key: "VAULT",      label: "TrueFound Vault",  films: categories.vault },
           ].filter((r) => r.films.length > 0)
 
           return rows.length > 0 ? (

@@ -16,12 +16,14 @@ const CATEGORY_KEYWORDS: Record<string, string> = {
   CRYPTIDS:   "bigfoot, cryptid, creature, found footage, monster, documentary",
   ALIENS:     "alien, UFO, extraterrestrial, found footage, alien encounter, documentary",
   PARANORMAL: "paranormal, ghost, supernatural, found footage, horror documentary",
+  VAULT:      "vintage documentary, classic film, retro documentary, free streaming, TrueFound Vault",
 }
 
 const CATEGORY_GENRE: Record<string, string> = {
   CRYPTIDS:   "Documentary, Horror",
   ALIENS:     "Documentary, Science Fiction",
   PARANORMAL: "Documentary, Horror",
+  VAULT:      "Documentary",
 }
 
 export async function generateMetadata({ params }: Props) {

@@ -127,6 +127,7 @@ export default function FilmForm({ film }: { film?: Film }) {
             <option value="CRYPTIDS">Creatures</option>
             <option value="ALIENS">Aliens</option>
             <option value="PARANORMAL">Paranormal</option>
+            <option value="VAULT">TrueFound Vault</option>
           </select>
         </div>
       </div>
