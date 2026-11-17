@@ -1,0 +1,151 @@
+[
+  {
+    "id": "prlog",
+    "name": "PRLog",
+    "url": "https://www.prlog.org/post-pr.html",
+    "free": true,
+    "accountRequired": true,
+    "hasCaptcha": true,
+    "notes": "Strong SEO. Requires free account. Good Google indexing.",
+    "fields": {
+      "title": "Headline field",
+      "summary": "Summary (first 200 chars of body)",
+      "body": "Press release body",
+      "category": "Entertainment",
+      "website": "https://www.truefoundmovies.com",
+      "contactName": "Contact name field",
+      "contactEmail": "Contact email field",
+      "city": "City",
+      "state": "State",
+      "country": "United States"
+    }
+  },
+  {
+    "id": "openpr",
+    "name": "OpenPR",
+    "url": "https://www.openpr.com/news/submit",
+    "free": true,
+    "accountRequired": true,
+    "hasCaptcha": true,
+    "notes": "High domain authority. Good for international pickup.",
+    "fields": {
+      "title": "Title",
+      "body": "Text",
+      "category": "Media & Entertainment",
+      "website": "https://www.truefoundmovies.com",
+      "contactName": "Contact name",
+      "contactEmail": "Contact email",
+      "company": "TrueFoundMovies"
+    }
+  },
+  {
+    "id": "24-7pressrelease",
+    "name": "24-7 Press Release",
+    "url": "https://www.24-7pressrelease.com/register.php",
+    "free": true,
+    "accountRequired": true,
+    "hasCaptcha": true,
+    "notes": "One free release per account on free tier. Good distribution.",
+    "fields": {
+      "title": "Headline",
+      "body": "Body",
+      "summary": "Summary",
+      "category": "Entertainment",
+      "website": "https://www.truefoundmovies.com",
+      "contactName": "Contact",
+      "contactEmail": "Email"
+    }
+  },
+  {
+    "id": "prfree",
+    "name": "PRFree",
+    "url": "https://prfree.org/submit-press-release.php",
+    "free": true,
+    "accountRequired": false,
+    "hasCaptcha": true,
+    "notes": "No account needed. Quick submission. Lower authority but adds breadth.",
+    "fields": {
+      "title": "Title",
+      "body": "Body",
+      "category": "Entertainment",
+      "website": "https://www.truefoundmovies.com",
+      "contactName": "Name",
+      "contactEmail": "Email",
+      "company": "TrueFoundMovies"
+    }
+  },
+  {
+    "id": "1888pressrelease",
+    "name": "1888 Press Release",
+    "url": "https://www.1888pressrelease.com/submit-press-release/",
+    "free": true,
+    "accountRequired": true,
+    "hasCaptcha": false,
+    "notes": "No CAPTCHA reported. Straightforward submission form.",
+    "fields": {
+      "title": "Title",
+      "body": "Body",
+      "summary": "Short description",
+      "category": "Entertainment",
+      "website": "https://www.truefoundmovies.com",
+      "contactName": "Contact name",
+      "contactEmail": "Contact email",
+      "company": "TrueFoundMovies"
+    }
+  },
+  {
+    "id": "przoom",
+    "name": "PRZoom",
+    "url": "https://www.przoom.com/submit/",
+    "free": true,
+    "accountRequired": true,
+    "hasCaptcha": true,
+    "notes": "Decent indexing. Part of a network of PR sites.",
+    "fields": {
+      "title": "Headline",
+      "body": "Body",
+      "category": "Entertainment",
+      "website": "https://www.truefoundmovies.com",
+      "contactName": "Name",
+      "contactEmail": "Email"
+    }
+  },
+  {
+    "id": "newswiretoday",
+    "name": "Newswire Today",
+    "url": "https://www.newswiretoday.com/submit.php",
+    "free": true,
+    "accountRequired": false,
+    "hasCaptcha": true,
+    "notes": "No account needed. Part of a broader newswire network.",
+    "fields": {
+      "title": "Title",
+      "body": "Body",
+      "summary": "Abstract",
+      "category": "Entertainment",
+      "website": "https://www.truefoundmovies.com",
+      "contactName": "Contact",
+      "contactEmail": "Email",
+      "company": "TrueFoundMovies"
+    }
+  },
+  {
+    "id": "i-newswire",
+    "name": "i-Newswire",
+    "url": "https://www.i-newswire.com/submit-press-release",
+    "free": true,
+    "accountRequired": true,
+    "hasCaptcha": true,
+    "notes": "Good for SEO backlinks. Active since 2007.",
+    "fields": {
+      "title": "Headline",
+      "body": "Body",
+      "summary": "Summary",
+      "category": "Entertainment",
+      "website": "https://www.truefoundmovies.com",
+      "contactName": "Name",
+      "contactEmail": "Email",
+      "company": "TrueFoundMovies"
+    }
+  }
+]
